@@ -6,988 +6,136 @@
 <meta name="theme-color" content="#080808">
 <meta name="description" content="PRO NETWORKS — Events, Entertainment & Experiences. PRO EM, PRO VISION and PRO ACTIVE.">
 <title>PRO NETWORKS | Events • Entertainment • Experiences</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 :root{
-  --bg:#070707;
-  --panel:#111111;
-  --panel2:#171717;
-  --gold:#d7ad42;
-  --gold2:#f2ce68;
-  --cream:#f7f1df;
-  --muted:#b9b3a6;
-  --red:#681f20;
-  --line:rgba(215,173,66,.35);
-  --shadow:0 20px 60px rgba(0,0,0,.45);
-  --radius:22px;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0
-}
-
-html{
-  scroll-behavior:smooth
-}
-
-body{
-  font-family:Inter,Arial,sans-serif;
-  background:var(--bg);
-  color:#fff;
-  line-height:1.6;
-  overflow-x:hidden
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.055;
-  background-image:radial-gradient(#fff .7px,transparent .7px);
-  background-size:8px 8px;
-  z-index:10
-}
-
-a{
-  color:inherit;
-  text-decoration:none
-}
-
-img{
-  max-width:100%;
-  display:block
-}
-
-.container{
-  width:min(1160px,calc(100% - 36px));
-  margin:auto
-}
-
-.gold{
-  color:var(--gold2)
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-size:11px;
-  color:var(--gold2);
-  font-weight:700
-}
-
-.eyebrow:before,
-.eyebrow:after{
-  content:"";
-  width:34px;
-  height:1px;
-  background:var(--gold)
-}
-
-.section-head{
-  text-align:center;
-  margin-bottom:42px
-}
-
-.section-head h2{
-  font-family:Cinzel,serif;
-  font-size:clamp(30px,5vw,48px);
-  margin-top:12px
-}
-
-.section-head p{
-  max-width:650px;
-  margin:12px auto 0;
-  color:var(--muted)
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:13px 22px;
-  border:1px solid var(--gold);
-  border-radius:999px;
-  font-weight:700;
-  font-size:14px;
-  transition:.25s
-}
-
-.btn.primary{
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#080808;
-  box-shadow:0 10px 30px rgba(215,173,66,.16)
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 32px rgba(215,173,66,.22)
-}
-
-.btn.outline{
-  background:transparent;
-  color:#fff
-}
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:50;
-  background:rgba(5,5,5,.82);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(215,173,66,.22)
-}
-
-.nav{
-  height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:0
-}
-
-.brand img{
-  width:58px;
-  height:58px;
-  object-fit:contain;
-  border-radius:50%;
-  background:#fff;
-  padding:3px
-}
-
-.brand span{
-  font-family:Cinzel,serif;
-  font-size:15px;
-  letter-spacing:1.5px;
-  white-space:nowrap
-}
-
-.brand small{
-  display:block;
-  font-family:Inter,sans-serif;
-  color:var(--muted);
-  font-size:7px;
-  letter-spacing:1.5px
-}
-
-.navlinks{
-  display:flex;
-  align-items:center;
-  gap:30px
-}
-
-.navlinks a{
-  font-size:13px;
-  color:#ddd;
-  position:relative;
-  padding:8px 0
-}
-
-.navlinks a:after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:2px;
-  background:var(--gold);
-  transition:.25s
-}
-
-.navlinks a:hover,
-.navlinks a.active{
-  color:#fff
-}
-
-.navlinks a:hover:after,
-.navlinks a.active:after{
-  width:100%
-}
-
-.nav-cta{
-  font-size:12px!important;
-  padding:10px 16px!important;
-  border:1px solid var(--gold);
-  border-radius:999px;
-  color:var(--gold2)!important
-}
-
-.nav-cta:after{
-  display:none
-}
-
-.menu{
-  display:none;
-  background:none;
-  border:1px solid #555;
-  color:#fff;
-  border-radius:10px;
-  width:44px;
-  height:40px;
-  font-size:22px
-}
-
-.hero{
-  min-height:760px;
-  padding:130px 0 70px;
-  display:grid;
-  place-items:center;
-  position:relative;
-  isolation:isolate
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background:
-  radial-gradient(
-    circle at 72% 42%,
-    rgba(214,166,54,.18),
-    transparent 24%
-  ),
-  linear-gradient(
-    90deg,
-    rgba(0,0,0,.96) 0%,
-    rgba(0,0,0,.77) 42%,
-    rgba(0,0,0,.3) 100%
-  ),
-  url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2000&q=85")
-  center/cover
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:auto 0 0;
-  height:220px;
-  background:linear-gradient(transparent,var(--bg));
-  z-index:-1
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1.15fr;
-  align-items:center;
-  gap:40px
-}
-
-.hero-logo{
-  width:min(500px,92%);
-  max-height:390px;
-  object-fit:contain;
-  object-position:center;
-  background:rgba(255,255,255,.97);
-  border-radius:20px;
-  padding:15px;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(215,173,66,.6)
-}
-
-.hero-copy .eyebrow{
-  margin-bottom:18px
-}
-
-.hero h1{
-  font-family:Cinzel,serif;
-  font-size:clamp(38px,6vw,72px);
-  line-height:1.05;
-  letter-spacing:1px
-}
-
-.hero h1 span{
-  display:block;
-  color:var(--gold2)
-}
-
-.hero-sub{
-  font-size:18px;
-  color:#e8e3d7;
-  max-width:590px;
-  margin:22px 0 28px
-}
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px
-}
-
-.trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-top:28px;
-  color:#cfc8b7;
-  font-size:12px
-}
-
-.trust b{
-  color:var(--gold2);
-  font-size:18px;
-  margin-right:4px
-}
-
-section{
-  padding:95px 0
-}
-
-.services{
-  background:linear-gradient(180deg,#0b0b0b,#121212)
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px
-}
-
-.service{
-  background:linear-gradient(160deg,#191919,#0d0d0d);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:.3s;
-  display:flex;
-  flex-direction:column
-}
-
-.service:hover{
-  transform:translateY(-7px);
-  border-color:var(--gold)
-}
-
-.service-img{
-  height:205px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden
-}
-
-.service-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-
-.service:nth-child(2) .service-img img{
-  object-fit:cover
-}
-
-.service:nth-child(3) .service-img img{
-  object-fit:cover
-}
-
-.service-body{
-  padding:28px
-}
-
-.service-tag{
-  font-size:10px;
-  letter-spacing:2px;
-  color:var(--gold2);
-  text-transform:uppercase
-}
-
-.service h3{
-  font-family:Cinzel,serif;
-  font-size:27px;
-  margin:7px 0 3px
-}
-
-.service h4{
-  font-size:14px;
-  color:#ddd;
-  margin-bottom:13px
-}
-
-.service p{
-  font-size:14px;
-  color:var(--muted);
-  min-height:68px
-}
-
-.service .btn{
-  margin-top:22px;
-  width:100%
-}
-
-.about{
-  position:relative;
-  overflow:hidden
-}
-
-.about:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-  radial-gradient(
-    circle at 20% 40%,
-    rgba(104,31,32,.28),
-    transparent 32%
-  ),
-  radial-gradient(
-    circle at 90% 60%,
-    rgba(215,173,66,.09),
-    transparent 30%
-  );
-  pointer-events:none
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-  position:relative
-}
-
-.about-visual{
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:18px;
-  background:#111;
-  box-shadow:var(--shadow)
-}
-
-.about-visual img{
-  width:100%;
-  aspect-ratio:1.15;
-  object-fit:contain;
-  background:#fff;
-  border-radius:15px
-}
-
-.about-copy h2{
-  font-family:Cinzel,serif;
-  font-size:clamp(30px,4vw,48px);
-  margin:12px 0 18px
-}
-
-.about-copy p{
-  color:var(--muted);
-  margin-bottom:14px
-}
-
-.features{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:28px
-}
-
-.feature{
-  border:1px solid rgba(215,173,66,.2);
-  background:rgba(255,255,255,.025);
-  padding:16px;
-  border-radius:15px
-}
-
-.feature strong{
-  display:block;
-  color:#fff;
-  font-size:14px
-}
-
-.feature span{
-  color:var(--muted);
-  font-size:12px
-}
-
-.gallery{
-  background:#0c0c0c
-}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  grid-auto-rows:180px;
-  gap:14px
-}
-
-.gallery-item{
-  position:relative;
-  overflow:hidden;
-  border-radius:16px;
-  border:1px solid rgba(215,173,66,.28);
-  cursor:pointer
-}
-
-.gallery-item:first-child{
-  grid-column:span 2;
-  grid-row:span 2
-}
-
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s
-}
-
-.gallery-item:after{
-  content:"View";
-  position:absolute;
-  inset:auto 14px 12px auto;
-  background:rgba(0,0,0,.7);
-  border:1px solid var(--gold);
-  color:#fff;
-  border-radius:999px;
-  padding:5px 11px;
-  font-size:10px;
-  opacity:0;
-  transition:.25s
-}
-
-.gallery-item:hover img{
-  transform:scale(1.07)
-}
-
-.gallery-item:hover:after{
-  opacity:1
-}
-
-.stats{
-  padding:55px 0;
-  background:linear-gradient(
-    90deg,
-    #160909,
-    #0b0b0b,
-    #160909
-  );
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line)
-}
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  text-align:center
-}
-
-.stat strong{
-  font-family:Cinzel,serif;
-  font-size:38px;
-  color:var(--gold2);
-  display:block
-}
-
-.stat span{
-  color:#bbb;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:1.5px
-}.contact{
-  position:relative;
-  overflow:hidden
-}
-
-.contact:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.92),
-      rgba(0,0,0,.68)
-    ),
-    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80")
-    center/cover
-}
-
-.contact-box{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:35px;
-  align-items:center
-}
-
-.contact h2{
-  font-family:Cinzel,serif;
-  font-size:clamp(34px,5vw,58px);
-  line-height:1.1;
-  margin:12px 0 18px
-}
-
-.contact p{
-  color:#d0c9bb;
-  max-width:570px
-}
-
-.contact-list{
-  display:grid;
-  gap:12px
-}
-
-.contact-card{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  padding:18px;
-  border:1px solid rgba(215,173,66,.3);
-  background:rgba(10,10,10,.72);
-  border-radius:16px
-}
-
-.contact-icon{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  border:1px solid var(--gold);
-  color:var(--gold2);
-  font-size:18px
-}
-
-.contact-card small{
-  display:block;
-  color:var(--gold2);
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:1.5px
-}
-
-.contact-card b{
-  font-size:14px
-}
-
-footer{
-  padding:45px 0 25px;
-  border-top:1px solid var(--line);
-  background:#050505
-}
-
-.footer-top{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  align-items:center;
-  padding-bottom:30px
-}
-
-.footer-brand{
-  display:flex;
-  align-items:center;
-  gap:12px
-}
-
-.footer-brand img{
-  width:62px;
-  height:62px;
-  object-fit:contain;
-  background:#fff;
-  border-radius:50%;
-  padding:3px
-}
-
-.footer-brand h3{
-  font-family:Cinzel,serif;
-  color:var(--gold2);
-  font-size:16px
-}
-
-.footer-brand p{
-  color:#777;
-  font-size:9px;
-  letter-spacing:1px
-}
-
-.footer-links{
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
-  justify-content:center
-}
-
-.footer-links a{
-  font-size:12px;
-  color:#aaa
-}
-
-.footer-links a:hover{
-  color:var(--gold2)
-}
-
-.copyright{
-  text-align:center;
-  border-top:1px solid #222;
-  padding-top:22px;
-  color:#666;
-  font-size:11px
-}
-
-.to-top{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:44px;
-  height:44px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  background:#111;
-  color:var(--gold2);
-  display:grid;
-  place-items:center;
-  z-index:40;
-  opacity:0;
-  pointer-events:none;
-  transition:.25s
-}
-
-.to-top.show{
-  opacity:1;
-  pointer-events:auto
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:.7s ease
-}
-
-.reveal.visible{
-  opacity:1;
-  transform:none
-}
-
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  z-index:100;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:25px
-}
-
-.lightbox.open{
-  display:flex
-}
-
-.lightbox img{
-  max-height:90vh;
-  max-width:95vw;
-  border-radius:12px
-}
-
-.lightbox button{
-  position:absolute;
-  right:22px;
-  top:18px;
-  background:none;
-  border:1px solid #777;
-  color:#fff;
-  border-radius:50%;
-  width:42px;
-  height:42px;
-  font-size:22px
-}
-
+  --bg:#070707;--panel:#111111;--panel2:#171717;--gold:#d7ad42;--gold2:#f2ce68;
+  --cream:#f7f1df;--muted:#b9b3a6;--red:#681f20;--line:rgba(215,173,66,.35);
+  --shadow:0 20px 60px rgba(0,0,0,.45);--radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.055;background-image:radial-gradient(#fff .7px,transparent .7px);background-size:8px 8px;z-index:10}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1160px,calc(100% - 36px));margin:auto}
+.gold{color:var(--gold2)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:3px;font-size:11px;color:var(--gold2);font-weight:700}
+.eyebrow:before,.eyebrow:after{content:"";width:34px;height:1px;background:var(--gold)}
+.section-head{text-align:center;margin-bottom:42px}
+.section-head h2{font-family:Cinzel,serif;font-size:clamp(30px,5vw,48px);margin-top:12px}
+.section-head p{max-width:650px;margin:12px auto 0;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border:1px solid var(--gold);border-radius:999px;font-weight:700;font-size:14px;transition:.25s}
+.btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#080808;box-shadow:0 10px 30px rgba(215,173,66,.16)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(215,173,66,.22)}
+.btn.outline{background:transparent;color:#fff}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(5,5,5,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(215,173,66,.22)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{width:58px;height:58px;object-fit:contain;border-radius:50%;background:#fff;padding:3px}
+.brand span{font-family:Cinzel,serif;font-size:15px;letter-spacing:1.5px;white-space:nowrap}
+.brand small{display:block;font-family:Inter,sans-serif;color:var(--muted);font-size:7px;letter-spacing:1.5px}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{font-size:13px;color:#ddd;position:relative;padding:8px 0}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:.25s}
+.navlinks a:hover,.navlinks a.active{color:#fff}.navlinks a:hover:after,.navlinks a.active:after{width:100%}
+.nav-cta{font-size:12px!important;padding:10px 16px!important;border:1px solid var(--gold);border-radius:999px;color:var(--gold2)!important}
+.nav-cta:after{display:none}
+.menu{display:none;background:none;border:1px solid #555;color:#fff;border-radius:10px;width:44px;height:40px;font-size:22px}
+.hero{min-height:760px;padding:130px 0 70px;display:grid;place-items:center;position:relative;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:
+ radial-gradient(circle at 72% 42%,rgba(214,166,54,.18),transparent 24%),
+ linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.77) 42%,rgba(0,0,0,.3) 100%),
+ url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2000&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:220px;background:linear-gradient(transparent,var(--bg));z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:40px}
+.hero-logo{width:min(500px,92%);max-height:390px;object-fit:contain;object-position:center;background:rgba(255,255,255,.97);border-radius:20px;padding:15px;box-shadow:var(--shadow);border:1px solid rgba(215,173,66,.6)}
+.hero-copy .eyebrow{margin-bottom:18px}
+.hero h1{font-family:Cinzel,serif;font-size:clamp(38px,6vw,72px);line-height:1.05;letter-spacing:1px}
+.hero h1 span{display:block;color:var(--gold2)}
+.hero-sub{font-size:18px;color:#e8e3d7;max-width:590px;margin:22px 0 28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:#cfc8b7;font-size:12px}
+.trust b{color:var(--gold2);font-size:18px;margin-right:4px}
+section{padding:95px 0}
+.services{background:linear-gradient(180deg,#0b0b0b,#121212)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service{background:linear-gradient(160deg,#191919,#0d0d0d);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.3s;display:flex;flex-direction:column}
+.service:hover{transform:translateY(-7px);border-color:var(--gold)}
+.service-img{height:205px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.service-img img{width:100%;height:100%;object-fit:cover}
+.service:nth-child(2) .service-img img{object-fit:cover}
+.service:nth-child(3) .service-img img{object-fit:cover}
+.service-body{padding:28px}
+.service-tag{font-size:10px;letter-spacing:2px;color:var(--gold2);text-transform:uppercase}
+.service h3{font-family:Cinzel,serif;font-size:27px;margin:7px 0 3px}
+.service h4{font-size:14px;color:#ddd;margin-bottom:13px}
+.service p{font-size:14px;color:var(--muted);min-height:68px}
+.service .btn{margin-top:22px;width:100%}
+.about{position:relative;overflow:hidden}
+.about:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 40%,rgba(104,31,32,.28),transparent 32%),radial-gradient(circle at 90% 60%,rgba(215,173,66,.09),transparent 30%);pointer-events:none}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;position:relative}
+.about-visual{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#111;box-shadow:var(--shadow)}
+.about-visual img{width:100%;aspect-ratio:1.15;object-fit:contain;background:#fff;border-radius:15px}
+.about-copy h2{font-family:Cinzel,serif;font-size:clamp(30px,4vw,48px);margin:12px 0 18px}
+.about-copy p{color:var(--muted);margin-bottom:14px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.feature{border:1px solid rgba(215,173,66,.2);background:rgba(255,255,255,.025);padding:16px;border-radius:15px}
+.feature strong{display:block;color:#fff;font-size:14px}.feature span{color:var(--muted);font-size:12px}
+.gallery{background:#0c0c0c}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:14px}
+.gallery-item{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(215,173,66,.28);cursor:pointer}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gallery-item:after{content:"View";position:absolute;inset:auto 14px 12px auto;background:rgba(0,0,0,.7);border:1px solid var(--gold);color:#fff;border-radius:999px;padding:5px 11px;font-size:10px;opacity:0;transition:.25s}
+.gallery-item:hover img{transform:scale(1.07)}.gallery-item:hover:after{opacity:1}
+.stats{padding:55px 0;background:linear-gradient(90deg,#160909,#0b0b0b,#160909);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat strong{font-family:Cinzel,serif;font-size:38px;color:var(--gold2);display:block}
+.stat span{color:#bbb;font-size:12px;text-transform:uppercase;letter-spacing:1.5px}
+.contact{position:relative;overflow:hidden}
+.contact:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.68)),url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80") center/cover}
+.contact-box{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.contact h2{font-family:Cinzel,serif;font-size:clamp(34px,5vw,58px);line-height:1.1;margin:12px 0 18px}
+.contact p{color:#d0c9bb;max-width:570px}
+.contact-list{display:grid;gap:12px}
+.contact-card{display:flex;align-items:center;gap:15px;padding:18px;border:1px solid rgba(215,173,66,.3);background:rgba(10,10,10,.72);border-radius:16px}
+.contact-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold2);font-size:18px}
+.contact-card small{display:block;color:var(--gold2);font-size:10px;text-transform:uppercase;letter-spacing:1.5px}.contact-card b{font-size:14px}
+footer{padding:45px 0 25px;border-top:1px solid var(--line);background:#050505}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center;padding-bottom:30px}
+.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:62px;height:62px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
+.footer-brand h3{font-family:Cinzel,serif;color:var(--gold2);font-size:16px}.footer-brand p{color:#777;font-size:9px;letter-spacing:1px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}.footer-links a{font-size:12px;color:#aaa}.footer-links a:hover{color:var(--gold2)}
+.copyright{text-align:center;border-top:1px solid #222;padding-top:22px;color:#666;font-size:11px}
+.to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;background:#111;color:var(--gold2);display:grid;place-items:center;z-index:40;opacity:0;pointer-events:none;transition:.25s}.to-top.show{opacity:1;pointer-events:auto}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:25px}.lightbox.open{display:flex}.lightbox img{max-height:90vh;max-width:95vw;border-radius:12px}.lightbox button{position:absolute;right:22px;top:18px;background:none;border:1px solid #777;color:#fff;border-radius:50%;width:42px;height:42px;font-size:22px}
 @media(max-width:900px){
-
-  .navlinks{
-    position:fixed;
-    top:76px;
-    left:0;
-    right:0;
-    background:rgba(5,5,5,.97);
-    display:none;
-    flex-direction:column;
-    padding:20px;
-    gap:8px;
-    border-bottom:1px solid var(--line)
-  }
-
-  .navlinks.open{
-    display:flex
-  }
-
-  .navlinks a{
-    width:100%;
-    text-align:center;
-    padding:12px
-  }
-
-  .nav-cta{
-    width:100%
-  }
-
-  .menu{
-    display:block
-  }
-
-  .hero{
-    min-height:auto;
-    padding-top:120px
-  }
-
-  .hero-grid{
-    grid-template-columns:1fr;
-    text-align:center
-  }
-
-  .hero-logo{
-    margin:auto;
-    width:min(380px,80vw)
-  }
-
-  .hero-sub{
-    margin-left:auto;
-    margin-right:auto
-  }
-
-  .hero-actions,
-  .trust{
-    justify-content:center
-  }
-
-  .service-grid{
-    grid-template-columns:1fr
-  }
-
-  .service-img{
-    height:220px
-  }
-
-  .about-grid,
-  .contact-box{
-    grid-template-columns:1fr;
-    gap:35px
-  }
-
-  .gallery-grid{
-    grid-template-columns:repeat(2,1fr);
-    grid-auto-rows:160px
-  }
-
-  .gallery-item:first-child{
-    grid-column:span 2;
-    grid-row:span 1
-  }
-
-  .stats-grid{
-    grid-template-columns:repeat(2,1fr);
-    row-gap:30px
-  }
-
-  .footer-top{
-    flex-direction:column;
-    text-align:center
-  }
+ .navlinks{position:fixed;top:76px;left:0;right:0;background:rgba(5,5,5,.97);display:none;flex-direction:column;padding:20px;gap:8px;border-bottom:1px solid var(--line)}
+ .navlinks.open{display:flex}.navlinks a{width:100%;text-align:center;padding:12px}.nav-cta{width:100%}.menu{display:block}
+ .hero{min-height:auto;padding-top:120px}.hero-grid{grid-template-columns:1fr;text-align:center}.hero-logo{margin:auto;width:min(380px,80vw)}.hero-sub{margin-left:auto;margin-right:auto}.hero-actions,.trust{justify-content:center}
+ .service-grid{grid-template-columns:1fr}.service-img{height:220px}
+ .about-grid,.contact-box{grid-template-columns:1fr;gap:35px}
+ .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}.gallery-item:first-child{grid-column:span 2;grid-row:span 1}
+ .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:30px}
+ .footer-top{flex-direction:column;text-align:center}
 }
-
 @media(max-width:520px){
-
-  .container{
-    width:min(100% - 26px,1160px)
-  }
-
-  section{
-    padding:70px 0
-  }
-
-  .nav{
-    height:68px
-  }
-
-  .navlinks{
-    top:68px
-  }
-
-  .brand img{
-    width:50px;
-    height:50px
-  }
-
-  .brand span{
-    font-size:13px
-  }
-
-  .hero{
-    padding-top:100px
-  }
-
-  .hero-logo{
-    width:92%;
-    padding:9px
-  }
-
-  .hero h1{
-    font-size:36px
-  }
-
-  .hero-sub{
-    font-size:15px
-  }
-
-  .btn{
-    width:100%
-  }
-
-  .hero-actions{
-    width:100%
-  }
-
-  .trust{
-    gap:10px
-  }
-
-  .features{
-    grid-template-columns:1fr
-  }
-
-  .gallery-grid{
-    gap:9px;
-    grid-auto-rows:130px
-  }
-
-  .gallery-item{
-    border-radius:10px
-  }
-
-  .section-head{
-    margin-bottom:30px
-  }
+ .container{width:min(100% - 26px,1160px)}section{padding:70px 0}.nav{height:68px}.navlinks{top:68px}.brand img{width:50px;height:50px}.brand span{font-size:13px}
+ .hero{padding-top:100px}.hero-logo{width:92%;padding:9px}.hero h1{font-size:36px}.hero-sub{font-size:15px}.btn{width:100%}.hero-actions{width:100%}.trust{gap:10px}
+ .features{grid-template-columns:1fr}.gallery-grid{gap:9px;grid-auto-rows:130px}.gallery-item{border-radius:10px}.section-head{margin-bottom:30px}
 }
 
 /* BRAND LOGO FIX — supplied logos are local and always visible */
-
-.brand img,
-.footer-brand img{
+.brand img,.footer-brand img{
   object-fit:contain!important;
   background:#fff!important;
   border:1px solid rgba(215,173,66,.65);
 }
-
 .hero-logo{
   display:block!important;
   visibility:visible!important;
@@ -996,13 +144,11 @@ footer{
   background:#fff!important;
   border:2px solid var(--gold)!important;
 }
-
 .brand-logo-panel{
   background:#f7f7f7!important;
   min-height:205px;
   padding:12px!important;
 }
-
 .brand-logo-panel img{
   width:100%!important;
   height:100%!important;
@@ -1010,46 +156,21 @@ footer{
   background:#f7f7f7!important;
 }
 
-.brand-strip{
-  padding:26px 0;
-  background:#080808;
-  border-top:1px solid rgba(215,173,66,.22);
-  border-bottom:1px solid rgba(215,173,66,.22)
-}
 
-.brand-strip-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px
-}
+.brand-strip{padding:26px 0;background:#080808;border-top:1px solid rgba(215,173,66,.22);border-bottom:1px solid rgba(215,173,66,.22)}
+.brand-strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.brand-strip-grid div{height:120px;background:#f7f7f7;border-radius:15px;padding:8px;border:1px solid rgba(215,173,66,.4);overflow:hidden}
+.brand-strip-grid img{width:100%;height:100%;object-fit:contain}
+@media(max-width:700px){.brand-strip-grid{grid-template-columns:1fr}.brand-strip-grid div{height:105px}}
 
-.brand-strip-grid div{
-  height:120px;
-  background:#f7f7f7;
-  border-radius:15px;
-  padding:8px;
-  border:1px solid rgba(215,173,66,.4);
-  overflow:hidden
-}
-
-.brand-strip-grid img{
-  width:100%;
-  height:100%;
-  object-fit:contain
-}
-
-@media(max-width:700px){
-  .brand-strip-grid{
-    grid-template-columns:1fr
-  }
-
-  .brand-strip-grid div{
-    height:105px
-  }
-}
 </style>
 </head>
-<body>      <span>PRO NETWORKS<small>EVENTS • ENTERTAINMENT • EXPERIENCES</small></span>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <img src="assets/pro-networks.jpg" alt="PRO NETWORKS logo">
+      <span>PRO NETWORKS<small>EVENTS • ENTERTAINMENT • EXPERIENCES</small></span>
     </a>
     <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="navlinks">
@@ -1062,270 +183,131 @@ footer{
 <main>
 <section id="home" class="hero">
   <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow">EVENTS • ENTERTAINMENT • EXPERIENCES</div>
-      <h1>WE CREATE<br><span>UNFORGETTABLE</span><br>EXPERIENCES.</h1>
-      <p class="lead">From high-energy events to powerful visual experiences, PRO NETWORKS brings creativity, technology and execution together.</p>
+    <div class="hero-visual reveal"><img class="hero-logo" src="assets/pro-networks.jpg" alt="PRO NETWORKS"></div>
+    <div class="hero-copy reveal">
+      <div class="eyebrow">Welcome to PRO NETWORKS</div>
+      <h1>We Create <span>Unforgettable</span> Experiences.</h1>
+      <p class="hero-sub">Entertainment, talent and complete event management — brought together through PRO EM, PRO VISION and PRO ACTIVE.</p>
       <div class="hero-actions">
-        <a class="btn btn-gold" href="#contact">Start a Project</a>
-        <a class="btn btn-outline" href="#services">Explore Services</a>
+        <a class="btn primary" href="#services">Explore Services →</a>
+        <a class="btn outline" href="https://wa.me/919821586547" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
       <div class="trust"><span><b>3</b> Specialist Brands</span><span><b>1</b> Connected Vision</span><span><b>2009</b> Since</span></div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-frame">
-        <img class="hero-logo" src="./assets/pro-networks-logo.png" alt="PRO NETWORKS Logo">
-      </div>
     </div>
   </div>
 </section>
 
 <section class="brand-strip">
   <div class="container brand-strip-grid">
-    <div><img src="./assets/pro-em-logo.png" alt="PRO EM"></div>
-    <div><img src="./assets/pro-vision-logo.png" alt="PRO VISION"></div>
-    <div><img src="./assets/pro-active-logo.png" alt="PRO ACTIVE"></div>
+    <div><img src="assets/pro-em.jpg" alt="PRO EM"></div>
+    <div><img src="assets/pro-vision.jpg" alt="PRO VISION"></div>
+    <div><img src="assets/pro-active.jpg" alt="PRO ACTIVE"></div>
   </div>
 </section>
 
-<section id="about" class="section">
-  <div class="container two-col">
-    <div>
-      <div class="eyebrow">ABOUT PRO NETWORKS</div>
-      <h2>ONE NETWORK.<br><span>THREE SPECIALISTS.</span></h2>
-    </div>
-    <div>
-      <p>PRO NETWORKS is a connected ecosystem of specialist brands designed to deliver complete event, entertainment, visual and experiential solutions.</p>
-      <p>Our approach combines creative thinking, technical expertise and disciplined execution — giving clients one connected team from concept to completion.</p>
-    </div>
+<section id="services" class="services">
+ <div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Our Services</div><h2>Three Brands. One Vision.</h2><p>Choose the specialist team that fits your event, entertainment or talent requirement.</p></div>
+  <div class="service-grid">
+   <article class="service reveal">
+    <div class="service-img brand-logo-panel"><img src="assets/pro-em.jpg" alt="PRO EM — Entertainment Management"></div>
+    <div class="service-body"><span class="service-tag">Entertainment Management</span><h3>PRO EM</h3><h4>Events • Celebrations • Corporate Functions</h4><p>Entertainment solutions for events, celebrations, corporate functions and special occasions.</p><a class="btn primary" href="https://wa.me/919821586547" target="_blank" rel="noopener">WhatsApp PRO EM</a></div>
+   </article>
+   <article class="service reveal">
+    <div class="service-img brand-logo-panel"><img src="assets/pro-vision.jpg" alt="PRO VISION — Celebrities, Bands and Unique Acts"></div>
+    <div class="service-body"><span class="service-tag">Talent & Entertainment</span><h3>PRO VISION</h3><h4>Celebrities • Bands • Unique Acts</h4><p>Celebrity appearances, live bands, performers and unique entertainment acts for memorable events.</p><a class="btn primary" href="https://wa.me/919619424331" target="_blank" rel="noopener">WhatsApp PRO VISION</a></div>
+   </article>
+   <article class="service reveal">
+    <div class="service-img brand-logo-panel"><img src="assets/pro-active.jpg" alt="PRO ACTIVE — Event Management"></div>
+    <div class="service-body"><span class="service-tag">Event Management</span><h3>PRO ACTIVE</h3><h4>Planning • Coordination • Execution</h4><p>Complete event management solutions from planning and coordination to execution.</p><a class="btn primary" href="https://wa.me/917710996547" target="_blank" rel="noopener">WhatsApp PRO ACTIVE</a></div>
+   </article>
   </div>
+ </div>
 </section>
 
-<section id="services" class="section dark-section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">WHAT WE DO</div>
-        <h2>OUR <span>SPECIALIST BRANDS</span></h2>
-      </div>
-      <p>Distinct capabilities. One connected vision.</p>
-    </div>
-
-    <div class="service-grid">
-      <article class="service-card">
-        <div class="service-number">01</div>
-        <div class="service-logo">
-          <img src="./assets/pro-em-logo.png" alt="PRO EM">
-        </div>
-        <h3>PRO EM</h3>
-        <p>Event management and production solutions built around memorable experiences and seamless execution.</p>
-        <a href="#contact">Discover PRO EM →</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">02</div>
-        <div class="service-logo">
-          <img src="./assets/pro-vision-logo.png" alt="PRO VISION">
-        </div>
-        <h3>PRO VISION</h3>
-        <p>Visual, LED, projection and immersive technology solutions that transform spaces and audiences.</p>
-        <a href="#contact">Discover PRO VISION →</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">03</div>
-        <div class="service-logo">
-          <img src="./assets/pro-active-logo.png" alt="PRO ACTIVE">
-        </div>
-        <h3>PRO ACTIVE</h3>
-        <p>Experiential activations and engagement concepts designed to connect brands with people.</p>
-        <a href="#contact">Discover PRO ACTIVE →</a>
-      </article>
-    </div>
+<section id="about" class="about">
+ <div class="container about-grid">
+  <div class="about-visual reveal"><img src="assets/pro-networks.jpg" alt="PRO NETWORKS emblem"></div>
+  <div class="about-copy reveal">
+   <div class="eyebrow">About Us</div><h2>More Than Events.<br><span class="gold">We Create Experiences.</span></h2>
+   <p>PRO NETWORKS brings entertainment and event management together under one connected network. Our three specialist brands cover entertainment management, celebrity and unique-act solutions, and complete event execution.</p>
+   <p>From the first idea to the final moment, the goal is simple: create an experience people remember.</p>
+   <div class="features">
+    <div class="feature"><strong>★ Trusted Network</strong><span>Connected entertainment solutions</span></div>
+    <div class="feature"><strong>◆ Creative Solutions</strong><span>Ideas shaped around your occasion</span></div>
+    <div class="feature"><strong>✦ Professional Team</strong><span>Planning and coordination</span></div>
+    <div class="feature"><strong>✧ Memorable Experiences</strong><span>Designed for lasting impact</span></div>
+   </div>
   </div>
+ </div>
 </section>
 
-<section id="gallery" class="section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">SELECTED MOMENTS</div>
-        <h2>BUILT FOR THE <span>SPOTLIGHT.</span></h2>
-      </div>
-      <p>Events, technology and experiences brought together under one network.</p>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item large">
-        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1600&q=80" alt="Live event">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80" alt="Concert crowd">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1000&q=80" alt="Stage lighting">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=80" alt="Audience">
-      </div>
-      <div class="gallery-item large">
-        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80" alt="Event production">
-      </div>
-    </div>
+<section id="gallery" class="gallery">
+ <div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Our Gallery</div><h2>Moments We’ve Created</h2><p>A visual glimpse into entertainment, celebrations, performances and event environments.</p></div>
+  <div class="gallery-grid">
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1400&q=85" alt="Live concert crowd"></div>
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85" alt="Outdoor event"></div>
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1000&q=85" alt="Stage performance"></div>
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=85" alt="Event lights"></div>
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1000&q=85" alt="Concert stage"></div>
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1000&q=85" alt="Elegant event venue"></div>
+   <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1000&q=85" alt="Celebration"></div>
   </div>
+ </div>
 </section>
 
-<section class="stats-section">
-  <div class="container stats-grid">
-    <div><strong>3</strong><span>Specialist Brands</span></div>
-    <div><strong>2009</strong><span>Established</span></div>
-    <div><strong>1</strong><span>Connected Vision</span></div>
-    <div><strong>∞</strong><span>Possibilities</span></div>
-  </div>
+<section class="stats">
+ <div class="container stats-grid">
+  <div class="stat reveal"><strong>3</strong><span>Specialist Brands</span></div>
+  <div class="stat reveal"><strong>2009</strong><span>PRO EM Since</span></div>
+  <div class="stat reveal"><strong>3</strong><span>Service Verticals</span></div>
+  <div class="stat reveal"><strong>∞</strong><span>Possibilities</span></div>
+ </div>
 </section>
 
-<section id="contact" class="contact-section">
-  <div class="contact-bg"></div>
-  <div class="container contact-content">
-    <div class="eyebrow">LET'S CREATE SOMETHING</div>
-    <h2>READY TO MAKE<br><span>AN IMPACT?</span></h2>
-    <p>Tell us about your next event, activation or visual experience.</p>
-    <div class="contact-actions">
-      <a class="btn btn-gold" href="https://wa.me/919821586547" target="_blank" rel="noopener">WhatsApp Us</a>
-      <a class="btn btn-outline" href="mailto:info@pronetworks.in">Email Us</a>
-    </div>
+<section id="contact" class="contact">
+ <div class="container contact-box">
+  <div class="reveal"><div class="eyebrow">Contact Us</div><h2>Let’s Work<br><span class="gold">Together.</span></h2><p>Have an event in mind? Connect with the PRO NETWORKS team and start planning your next experience.</p></div>
+  <div class="contact-list reveal">
+   <a class="contact-card" href="https://wa.me/919821586547" target="_blank" rel="noopener"><span class="contact-icon">◉</span><div><small>PRO EM</small><b>+91 98215 86547</b></div></a>
+   <a class="contact-card" href="https://wa.me/919619424331" target="_blank" rel="noopener"><span class="contact-icon">◉</span><div><small>PRO VISION</small><b>+91 96194 24331</b></div></a>
+   <a class="contact-card" href="https://wa.me/917710996547" target="_blank" rel="noopener"><span class="contact-icon">◉</span><div><small>PRO ACTIVE</small><b>+91 77109 96547</b></div></a>
+   <a class="contact-card" href="mailto:pro.em.khan@gmail.com"><span class="contact-icon">✉</span><div><small>Email</small><b>pro.em.khan@gmail.com</b></div></a>
   </div>
+ </div>
 </section>
-
 </main>
 
 <footer>
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="./assets/pro-networks-logo.png" alt="PRO NETWORKS">
-      <p>EVENTS • ENTERTAINMENT • EXPERIENCES</p>
-    </div>
-    <div>
-      <h4>EXPLORE</h4>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div>
-      <h4>CONNECT</h4>
-      <a href="https://wa.me/919821586547" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="mailto:info@pronetworks.in">Email</a>
-    </div>
+ <div class="container">
+  <div class="footer-top">
+   <div class="footer-brand"><img src="assets/pro-networks.jpg" alt="PRO NETWORKS"><div><h3>PRO NETWORKS</h3><p>EVENTS • ENTERTAINMENT • EXPERIENCES</p></div></div>
+   <div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
   </div>
-
-  <div class="container footer-bottom">
-    <span>© 2026 PRO NETWORKS. All rights reserved.</span>
-    <span>EVENTS • ENTERTAINMENT • EXPERIENCES</span>
-  </div>
+  <div class="copyright">© <span id="year"></span> PRO NETWORKS. All Rights Reserved.</div>
+ </div>
 </footer>
 
-<button id="topBtn" aria-label="Back to top">↑</button>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" aria-label="Close">×</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
+<a class="to-top" href="#home" aria-label="Back to top">↑</a>
+<div class="lightbox" id="lightbox"><button aria-label="Close">×</button><img src="" alt=""></div>
 
 <script>
-const menu = document.querySelector('.menu');
-const nav = document.querySelector('.navlinks');
+const menu=document.querySelector('.menu'), nav=document.querySelector('.navlinks');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)});
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
 
-menu?.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-document.querySelectorAll('.navlinks a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menu?.setAttribute('aria-expanded', 'false');
-  });
-});
+const topBtn=document.querySelector('.to-top');
+window.addEventListener('scroll',()=>topBtn.classList.toggle('show',scrollY>500));
 
-const sections = document.querySelectorAll('main section[id]');
-const navLinks = document.querySelectorAll('.navlinks a[href^="#"]');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-
-  sections.forEach(section => {
-    const top = section.offsetTop - 140;
-    if (window.scrollY >= top) current = section.id;
-  });
-
-  navLinks.forEach(link => {
-    link.classList.toggle(
-      'active',
-      link.getAttribute('href') === '#' + current
-    );
-  });
-});
-
-const revealItems = document.querySelectorAll(
-  '.section, .service-card, .gallery-item, .stats-section'
-);
-
-const revealObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-
-revealItems.forEach(item => revealObserver.observe(item));
-
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.querySelector('.lightbox-close');
-
-document.querySelectorAll('.gallery-item img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('show');
-  });
-});
-
-function closeLightbox() {
-  lightbox.classList.remove('show');
-  lightboxImg.src = '';
-}
-
-lightboxClose?.addEventListener('click', closeLightbox);
-
-lightbox?.addEventListener('click', event => {
-  if (event.target === lightbox) closeLightbox();
-});
-
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') closeLightbox();
-});
-
-const topBtn = document.getElementById('topBtn');
-
-window.addEventListener('scroll', () => {
-  topBtn.classList.toggle('show', window.scrollY > 500);
-});
-
-topBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
+const lightbox=document.getElementById('lightbox'), lbImg=lightbox.querySelector('img');
+document.querySelectorAll('.gallery-item img').forEach(img=>img.addEventListener('click',()=>{lbImg.src=img.src;lbImg.alt=img.alt;lightbox.classList.add('open')}));
+lightbox.addEventListener('click',e=>{if(e.target===lightbox||e.target.tagName==='BUTTON')lightbox.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lightbox.classList.remove('open')});
 </script>
-
 </body>
 </html>
