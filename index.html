@@ -494,7 +494,7 @@
       font-weight: 600;
     }
 
-    /* STAGE ACT CARDS GRID FIXED FOR UNCROPPED IMAGES */
+    /* ACT CARDS GRID */
     .acts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -517,7 +517,6 @@
       box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
     }
 
-    /* IMAGE CONTAINER (FIT FULL UNCROPPED IMAGE) */
     .act-card-img-wrapper {
       width: 100%;
       height: 240px;
@@ -534,7 +533,7 @@
       max-height: 100%;
       width: auto;
       height: auto;
-      object-fit: contain; /* PROPER FULL PHOTO WITHOUT CROPPING */
+      object-fit: contain;
       border-radius: 6px;
     }
 
@@ -596,7 +595,7 @@
   <header>
     <div class="nav-container">
       <a href="#home" class="brand-logo">
-        <img src="pro-networks.jpg" alt="PRO NETWORKS Logo">
+        <img src="pro-networks.jpg" alt="PRO NETWORKS Logo" onerror="this.src='pro-em.jpg'">
         <div class="brand-logo-text">
           PRO NETWORKS
           <small>EVENTS • ENTERTAINMENT • EXPERIENCES</small>
@@ -616,7 +615,7 @@
     <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-img">
-        <img src="pro-networks.jpg" alt="PRO NETWORKS">
+        <img src="pro-networks.jpg" alt="PRO NETWORKS" onerror="this.src='pro-em.jpg'">
       </div>
       <div class="hero-content">
         <div class="hero-subtitle">Welcome to PRO NETWORKS</div>
@@ -784,7 +783,7 @@
           timing: "4 acts of 5 min each",
           desc: "Mesmerizing international stage acts with LED Wings, Fans, and Flamenco props.",
           image: "Sangeet international.jpg",
-          fallbacks: ["Sangeet international.png", "Sangeet-international.jpg"]
+          fallbacks: ["Sangeet-international.jpg", "Sangeet international.png", "Sangeet-international.png"]
         },
         {
           title: "Ring Aerial Act",
@@ -792,7 +791,7 @@
           timing: "3 acts of 5 min each",
           desc: "Breathtaking aerial ring, duo rope, and hanging acrobatic performances.",
           image: "Sangeet-ring aerial.jpg",
-          fallbacks: ["Sangeet-ring aerial.png"]
+          fallbacks: ["Sangeet ring aerial.jpg", "Sangeet-ring-aerial.jpg", "Sangeet-ring aerial.png"]
         },
         {
           title: "Fire Act",
@@ -800,7 +799,7 @@
           timing: "4 acts of 5 min each",
           desc: "Thrilling stage fire performances utilizing unique fire props and choreography.",
           image: "Sangeet-fire.jpg",
-          fallbacks: ["Sangeet-fire.png"]
+          fallbacks: ["Sangeet fire.jpg", "Sangeet-fire.png"]
         },
         {
           title: "LED & UV Act",
@@ -808,7 +807,7 @@
           timing: "4 acts of 5 min each",
           desc: "High-tech LED and ultra-violet suit performances with glowing visual props.",
           image: "Sangeet-led.jpg",
-          fallbacks: ["Sangeet-led.png"]
+          fallbacks: ["Sangeet led.jpg", "Sangeet-led.png"]
         },
         {
           title: "Tanoura Act",
@@ -816,7 +815,7 @@
           timing: "4 acts of 5 min each",
           desc: "Traditional and LED Sufi Tanoura spinning performance with custom light/fire props.",
           image: "Sangeet-tanoura.jpg",
-          fallbacks: ["Sangeet-tanoura.png"]
+          fallbacks: ["Sangeet tanoura.jpg", "Sangeet-tanoura.png"]
         },
         {
           title: "Martini Glass Act",
@@ -824,7 +823,7 @@
           timing: "4 acts of 5 min each",
           desc: "Glamorous contortion and dance act performed inside a giant illuminated Martini glass.",
           image: "Sangeet-Martini.jpg",
-          fallbacks: ["Sangeet-Martini.png"]
+          fallbacks: ["Sangeet Martini.jpg", "Sangeet-martini.jpg", "Sangeet-Martini.png"]
         },
         {
           title: "Pole Act",
@@ -832,7 +831,7 @@
           timing: "4 acts of 5 min each",
           desc: "Sensational artistic pole gymnastics and acrobatic dance routines.",
           image: "Sangeet-pole.jpg",
-          fallbacks: ["Sangeet-pole.png"]
+          fallbacks: ["Sangeet pole.jpg", "Sangeet-pole.png"]
         },
         {
           title: "Liquid Drummer",
@@ -840,7 +839,7 @@
           timing: "2 acts of 45 min each",
           desc: "High-energy water drum percussion show with illuminated splashes and LED suits.",
           image: "Sangeet-liquid drummer.jpg",
-          fallbacks: ["Sangeet-liquid drummer.png", "Sangeet-liquid drumme.jpg"]
+          fallbacks: ["Sangeet-liquid-drummer.jpg", "Sangeet-liquid drumme.jpg", "Sangeet liquid drummer.jpg"]
         },
         {
           title: "Anti-Gravity Wall Musicians",
@@ -848,7 +847,7 @@
           timing: "2 acts of 45 min each",
           desc: "Unique musical setup with instrumentalists mounted on a vertical anti-gravity wall.",
           image: "Sangeet-Anti gravity.jpg",
-          fallbacks: ["Sangeet-Anti gravity.png"]
+          fallbacks: ["Sangeet-Anti-gravity.jpg", "Sangeet Anti gravity.jpg", "Sangeet-Anti gravity.png"]
         },
         {
           title: "Russian Stage Live Musicians",
@@ -856,7 +855,17 @@
           timing: "2 acts of 45 min each",
           desc: "Breathtaking mix of live instrumental music and stage ensemble.",
           image: "Sangeet-Russian stage live musicians.jpg",
-          fallbacks: ["Sangeet-Russian stage.jpg", "Sangeet-Russian stage live musicians.png", "Sangeet-Russian stage .jpg"]
+          fallbacks: [
+            "Sangeet-Russian-stage-live-musicians.jpg",
+            "Sangeet-Russian_stage_live_musicians.jpg",
+            "Sangeet-Russian-stage-live-musician.jpg",
+            "Sangeet-Russian stage.jpg",
+            "Sangeet-Russian-stage.jpg",
+            "Russian stage live musicians.jpg",
+            "Russian-stage-live-musicians.jpg",
+            "Sangeet-Russian stage live musicians.png",
+            "Sangeet-Russian-stage-live-musicians.png"
+          ]
         }
       ],
       baraat: [],
@@ -873,7 +882,7 @@
       document.getElementById('galleryModal').style.display = 'none';
     }
 
-    // AUTO RETRY FALLBACK IF FILENAME WAS TRUNCATED ON GITHUB UPLOAD
+    // ADVANCED AUTO RETRY FALLBACK FUNCTION
     function handleImgError(img) {
       const fallbacksStr = img.getAttribute('data-fallbacks');
       if (fallbacksStr) {
@@ -886,7 +895,7 @@
         }
       }
       img.onerror = null;
-      img.src = 'pro-em.jpg';
+      img.src = 'pro-em.jpg'; // FINAL DEFAULT BRAND PLACEHOLDER
     }
 
     function switchCategory(category) {
