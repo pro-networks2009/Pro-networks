@@ -518,7 +518,7 @@
 
     .act-card-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       background: #1a1a24;
       border-bottom: 1px solid var(--border-color);
@@ -763,7 +763,7 @@
     <p>© PRO NETWORKS. All Rights Reserved.</p>
   </footer>
 
-  <!-- JAVASCRIPT FOR STAGE ACTS DATA -->
+  <!-- JAVASCRIPT FOR EXACT GITHUB FILENAMES -->
   <script>
     const galleryData = {
       sangeet: [
@@ -772,70 +772,70 @@
           artists: "3 to 6 Artists",
           timing: "4 acts of 5 min each",
           desc: "Mesmerizing international stage acts with LED Wings, Fans, and Flamenco props.",
-          image: "sangeet-belly.jpg"
+          image: "Sangeet international.jpg"
         },
         {
           title: "Ring Aerial Act",
           artists: "1 to 2 Artists",
           timing: "3 acts of 5 min each",
           desc: "Breathtaking aerial ring, duo rope, and hanging acrobatic performances.",
-          image: "sangeet-ring-aerial.jpg"
+          image: "Sangeet-ring aerial.jpg"
         },
         {
           title: "Fire Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "Thrilling stage fire performances utilizing unique fire props and choreography.",
-          image: "sangeet-fire.jpg"
+          image: "Sangeet-fire.jpg"
         },
         {
           title: "LED & UV Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "High-tech LED and ultra-violet suit performances with glowing visual props.",
-          image: "sangeet-led-uv.jpg"
+          image: "Sangeet-led.jpg"
         },
         {
           title: "Tanoura Act",
           artists: "1 Artist",
           timing: "4 acts of 5 min each",
           desc: "Traditional and LED Sufi Tanoura spinning performance with custom light/fire props.",
-          image: "sangeet-tanoura.jpg"
+          image: "Sangeet-tanoura.jpg"
         },
         {
           title: "Martini Glass Act",
           artists: "1 to 2 Artists",
           timing: "4 acts of 5 min each",
           desc: "Glamorous contortion and dance act performed inside a giant illuminated Martini glass.",
-          image: "sangeet-martini.jpg"
+          image: "Sangeet-Martini.jpg"
         },
         {
           title: "Pole Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "Sensational artistic pole gymnastics and acrobatic dance routines.",
-          image: "sangeet-pole.jpg"
+          image: "Sangeet-pole.jpg"
         },
         {
           title: "Liquid Drummer",
           artists: "1 to 3 Artists",
           timing: "2 acts of 45 min each",
           desc: "High-energy water drum percussion show with illuminated splashes and LED suits.",
-          image: "sangeet-liquid-drummer.jpg"
+          image: "Sangeet-liquid drummer.jpg"
         },
         {
           title: "Anti-Gravity Wall Musicians",
           artists: "2 to 9 Artists",
           timing: "2 acts of 45 min each",
           desc: "Unique musical setup with instrumentalists mounted on a vertical anti-gravity wall.",
-          image: "sangeet-anti-gravity.jpg"
+          image: "Sangeet-Anti gravity.jpg"
         },
         {
           title: "Russian Stage Live Musicians",
           artists: "1 to 9 Artists",
           timing: "2 acts of 45 min each",
           desc: "Breathtaking mix of live instrumental music and stage ensemble.",
-          image: "sangeet-russian-musicians.jpg"
+          image: "Sangeet-Russian stage live musicians.jpg"
         }
       ],
       baraat: [],
@@ -853,14 +853,11 @@
     }
 
     function switchCategory(category) {
-      // Update Tab Styles
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById(`tab-${category}`).classList.add('active');
 
-      // Update Modal Title
       document.getElementById('modalCategoryTitle').innerText = category.toUpperCase() + ' STAGE ACTS';
 
-      // Load Acts Grid
       const grid = document.getElementById('actsGrid');
       grid.innerHTML = '';
 
@@ -878,7 +875,7 @@
         const card = document.createElement('div');
         card.className = 'act-card';
         card.innerHTML = `
-          <img src="${act.image}" alt="${act.title}" class="act-card-image" onerror="this.onerror=null; this.src='pro-em.jpg';">
+          <img src="${encodeURI(act.image)}" alt="${act.title}" class="act-card-image" onerror="this.onerror=null; this.src='pro-em.jpg';">
           <div class="act-card-content">
             <div class="act-title">${act.title}</div>
             <div class="act-badges">
@@ -892,7 +889,6 @@
       });
     }
 
-    // Close modal on outer click
     window.onclick = function(event) {
       const modal = document.getElementById('galleryModal');
       if (event.target === modal) {
