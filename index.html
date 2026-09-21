@@ -878,7 +878,104 @@
           instagram: "https://www.instagram.com/reel/DAk-rYBoAHX/"
         }
       ],
-      baraat: [],
+      baraat: [
+        {
+          title: "Apsara Concept Baraat",
+          artists: "4 to 8 Artists",
+          timing: "Procession Entry",
+          desc: "Ethereal celestial dancer troupe welcoming and leading the grand baraat procession.",
+          image: "Baraat-apsara.jpg",
+          instagram: "https://www.instagram.com/reel/CtI6XjqoR_R/"
+        },
+        {
+          title: "Arabian Theme Baraat",
+          artists: "6 to 12 Artists",
+          timing: "Procession Entry",
+          desc: "Exotic Arabian-themed royal procession featuring traditional costumes and props.",
+          image: "Baraat-arabian.jpg",
+          instagram: "https://www.instagram.com/reel/DTNPor9DGnN/"
+        },
+        {
+          title: "Brass & Fusion Band",
+          artists: "8 to 15 Musicians",
+          timing: "60 to 90 min",
+          desc: "Energetic live brass fusion band creating a grand, royal musical experience.",
+          image: "Baraat-band.jpg",
+          instagram: "https://www.instagram.com/p/CtOhgb2oCfM/"
+        },
+        {
+          title: "Ballerina Welcome Act",
+          artists: "2 to 4 Artists",
+          timing: "Procession Entry",
+          desc: "Graceful ballerina dancers adding classic flair and grandeur to the wedding arrival.",
+          image: "Baraat-ballerina.jpg",
+          instagram: "https://www.instagram.com/reel/CtLhRKrIzyC/"
+        },
+        {
+          title: "Grand Carnival Baraat",
+          artists: "8 to 15 Performers",
+          timing: "Procession Entry",
+          desc: "Vibrant carnival dancers, stilt walkers, and colorful parade performers.",
+          image: "Baraat-carnival.jpg",
+          instagram: "https://www.instagram.com/reel/Cvj5zuHo0Ox/"
+        },
+        {
+          title: "Colours of Joy Baraat",
+          artists: "6 to 12 Performers",
+          timing: "Procession Entry",
+          desc: "Multi-colored visual dance troupe bringing high energy and festive color to the parade.",
+          image: "Baraat-colours.jpg",
+          instagram: "https://www.instagram.com/reel/DTNNn2hjPol/"
+        },
+        {
+          title: "Crazy Carnival Troupe",
+          artists: "10 to 20 Performers",
+          timing: "Procession Entry",
+          desc: "Extravagant festive carnival troupe with elaborate costumes and crowd engagement.",
+          image: "Baraat-carzycarnival.jpg",
+          instagram: "https://www.instagram.com/reel/DBGOPLHoHEJ/"
+        },
+        {
+          title: "Punjabi Dhol Beats",
+          artists: "4 to 10 Dholis",
+          timing: "60 to 90 min",
+          desc: "High-power Punjabi Dhol beats driving maximum dance energy for the baraati troupe.",
+          image: "Baraat-dhol.jpg",
+          instagram: "https://www.instagram.com/reel/DTkY5hhjFdH/"
+        },
+        {
+          title: "Egyptian Royal Baraat",
+          artists: "6 to 12 Performers",
+          timing: "Procession Entry",
+          desc: "Majestic Egyptian Pharaoh and guard troupe bringing ancient luxury and style.",
+          image: "Baraat-egyptian.jpg",
+          instagram: "https://www.instagram.com/reel/DTkZo-nDLKb/"
+        },
+        {
+          title: "Royal Indian Folk Baraat",
+          artists: "8 to 16 Artists",
+          timing: "Procession Entry",
+          desc: "Traditional Indian folk dancers and cultural performers celebrating heritage.",
+          image: "Baraat-indian.jpg",
+          instagram: "https://www.instagram.com/reel/DTSOBX5jLm1/"
+        },
+        {
+          title: "Japanese Fan & Drum Baraat",
+          artists: "4 to 8 Performers",
+          timing: "Procession Entry",
+          desc: "Unique Japanese-themed procession featuring traditional fans, robes, and percussion.",
+          image: "Baraat-japanese.jpg",
+          instagram: "https://www.instagram.com/reel/DTNOgsDDMAQ/"
+        },
+        {
+          title: "Processional Live Musicians",
+          artists: "3 to 6 Musicians",
+          timing: "60 to 90 min",
+          desc: "Mobile instrumentalists performing live acoustic and fusion melodies along the route.",
+          image: "Baraat-musician.jpg",
+          instagram: "https://www.instagram.com/reel/DTkZEaDDJto/"
+        }
+      ],
       reception: [],
       serve: []
     };
@@ -901,7 +998,7 @@
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById(`tab-${category}`).classList.add('active');
 
-      document.getElementById('modalCategoryTitle').innerText = category.toUpperCase() + ' STAGE ACTS';
+      document.getElementById('modalCategoryTitle').innerText = category.toUpperCase() + ' ACTS';
 
       const grid = document.getElementById('actsGrid');
       grid.innerHTML = '';
