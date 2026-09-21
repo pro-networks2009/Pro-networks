@@ -505,16 +505,31 @@
       background: rgba(0,0,0,0.4);
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 20px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 12px;
       transition: transform 0.3s, border-color 0.3s;
     }
 
     .act-card:hover {
       transform: translateY(-4px);
       border-color: var(--accent-gold);
+    }
+
+    .act-card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #1a1a24;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .act-card-content {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
     }
 
     .act-title {
@@ -543,24 +558,11 @@
       color: var(--text-muted);
     }
 
-    .insta-link-btn {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: opacity 0.3s;
-    }
-
-    .insta-link-btn:hover {
-      opacity: 0.9;
+    .empty-category-msg {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
     }
 
     /* FOOTER */
@@ -734,14 +736,14 @@
     </section>
   </main>
 
-  <!-- MULTI-PHOTO & VIDEO ACTS MODAL -->
+  <!-- MULTI-PHOTO MODAL -->
   <div id="galleryModal" class="modal-overlay">
     <div class="modal-container">
       <span class="close-modal" onclick="closeModal()">&times;</span>
       
       <div class="modal-title-area">
         <h2 id="modalCategoryTitle" style="color:var(--accent-gold); font-family:'Playfair Display', serif;">Sangeet Stage Acts</h2>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Browse through available performance acts and video links</p>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Browse through performance acts and photos</p>
       </div>
 
       <!-- CATEGORY TABS INSIDE MODAL -->
@@ -766,103 +768,79 @@
     const galleryData = {
       sangeet: [
         {
-          title: "Belly / International Act",
+          title: "International Belly Act",
           artists: "3 to 6 Artists",
           timing: "4 acts of 5 min each",
           desc: "Mesmerizing international stage acts with LED Wings, Fans, and Flamenco props.",
-          insta: "https://www.instagram.com/reel/DTCnFBLjHYr/"
+          image: "sangeet-belly.jpg"
         },
         {
           title: "Ring Aerial Act",
           artists: "1 to 2 Artists",
           timing: "3 acts of 5 min each",
           desc: "Breathtaking aerial ring, duo rope, and hanging acrobatic performances.",
-          insta: "https://www.instagram.com/reel/DTC1dehjME/"
+          image: "sangeet-ring-aerial.jpg"
         },
         {
           title: "Fire Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "Thrilling stage fire performances utilizing unique fire props and choreography.",
-          insta: "https://www.instagram.com/reel/DTC1QpMjESW/"
+          image: "sangeet-fire.jpg"
         },
         {
           title: "LED & UV Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "High-tech LED and ultra-violet suit performances with glowing visual props.",
-          insta: "https://www.instagram.com/reel/DTC1QpMjESW/"
+          image: "sangeet-led-uv.jpg"
         },
         {
           title: "Tanoura Act",
           artists: "1 Artist",
           timing: "4 acts of 5 min each",
           desc: "Traditional and LED Sufi Tanoura spinning performance with custom light/fire props.",
-          insta: "https://www.instagram.com/reel/DTC02UGDMKa/"
+          image: "sangeet-tanoura.jpg"
         },
         {
           title: "Martini Glass Act",
           artists: "1 to 2 Artists",
           timing: "4 acts of 5 min each",
           desc: "Glamorous contortion and dance act performed inside a giant illuminated Martini glass.",
-          insta: "https://www.instagram.com/reel/CvofVXiptQi/"
+          image: "sangeet-martini.jpg"
         },
         {
           title: "Pole Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "Sensational artistic pole gymnastics and acrobatic dance routines.",
-          insta: "https://www.instagram.com/reel/DU2dDtIDATO/"
+          image: "sangeet-pole.jpg"
         },
         {
           title: "Liquid Drummer",
           artists: "1 to 3 Artists",
           timing: "2 acts of 45 min each",
           desc: "High-energy water drum percussion show with illuminated splashes and LED suits.",
-          insta: "https://www.instagram.com/reel/DTCZEf4DKbx/"
+          image: "sangeet-liquid-drummer.jpg"
         },
         {
           title: "Anti-Gravity Wall Musicians",
           artists: "2 to 9 Artists",
           timing: "2 acts of 45 min each",
           desc: "Unique musical setup with instrumentalists mounted on a vertical anti-gravity wall.",
-          insta: "https://www.instagram.com/reel/DTCZEf4DKbx/"
+          image: "sangeet-anti-gravity.jpg"
         },
         {
           title: "Russian Stage Live Musicians",
           artists: "1 to 9 Artists",
           timing: "2 acts of 45 min each",
           desc: "Breathtaking mix of live instrumental music and stage ensemble.",
-          insta: "https://www.instagram.com/reel/DAk-rYBoAHX/"
+          image: "sangeet-russian-musicians.jpg"
         }
       ],
-      baraat: [
-        {
-          title: "Grand Baraat Entry",
-          artists: "Multiple Artists",
-          timing: "60 mins",
-          desc: "High-energy procession with live brass band, dhol players, and celebratory acts.",
-          insta: "https://wa.me/919821586547"
-        }
-      ],
-      reception: [
-        {
-          title: "Gala Symphony",
-          artists: "Live Musicians",
-          timing: "90 mins",
-          desc: "Classy musical arrangements for grand reception setups.",
-          insta: "https://wa.me/919821586547"
-        }
-      ],
-      serve: [
-        {
-          title: "Luxury Hospitality & Serve",
-          artists: "Hostesses & Performers",
-          timing: "Throughout Event",
-          desc: "Interactive themed serve and welcoming acts for guests.",
-          insta: "https://wa.me/919821586547"
-        }
-      ]
+      baraat: [],
+      reception: [],
+      serve: []
     };
 
     function openGallery(category) {
@@ -887,19 +865,28 @@
       grid.innerHTML = '';
 
       const acts = galleryData[category] || [];
+
+      if (acts.length === 0) {
+        grid.innerHTML = `<div class="empty-category-msg">
+          <p style="font-size: 1.1rem; color: var(--accent-gold);">✨ Details Coming Soon</p>
+          <p>The acts and details for this category will be updated shortly.</p>
+        </div>`;
+        return;
+      }
+
       acts.forEach(act => {
         const card = document.createElement('div');
         card.className = 'act-card';
         card.innerHTML = `
-          <div class="act-title">${act.title}</div>
-          <div class="act-badges">
-            <span class="badge">👥 ${act.artists}</span>
-            <span class="badge">⏱️ ${act.timing}</span>
+          <img src="${act.image}" alt="${act.title}" class="act-card-image" onerror="this.onerror=null; this.src='pro-em.jpg';">
+          <div class="act-card-content">
+            <div class="act-title">${act.title}</div>
+            <div class="act-badges">
+              <span class="badge">👥 ${act.artists}</span>
+              <span class="badge">⏱️ ${act.timing}</span>
+            </div>
+            <div class="act-desc">${act.desc}</div>
           </div>
-          <div class="act-desc">${act.desc}</div>
-          <a href="${act.insta}" class="insta-link-btn" target="_blank">
-            <span>▶ Watch Video Reel</span>
-          </a>
         `;
         grid.appendChild(card);
       });
