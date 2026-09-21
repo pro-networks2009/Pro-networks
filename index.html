@@ -569,6 +569,30 @@
       line-height: 1.5;
     }
 
+    /* SMALL VIDEO BUTTON STYLING */
+    .btn-video {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-hover);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 16px;
+      text-decoration: none;
+      width: fit-content;
+      margin-top: auto;
+      transition: all 0.2s ease;
+    }
+
+    .btn-video:hover {
+      background: var(--accent-gold);
+      color: #000;
+      transform: translateY(-1px);
+    }
+
     .empty-category-msg {
       grid-column: 1 / -1;
       text-align: center;
@@ -745,14 +769,14 @@
     </section>
   </main>
 
-  <!-- MULTI-PHOTO MODAL -->
+  <!-- GALLERY MODAL -->
   <div id="galleryModal" class="modal-overlay">
     <div class="modal-container">
       <span class="close-modal" onclick="closeModal()">&times;</span>
       
       <div class="modal-title-area">
         <h2 id="modalCategoryTitle" style="color:var(--accent-gold); font-family:'Playfair Display', serif;">Sangeet Stage Acts</h2>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Browse through performance acts and photos</p>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Browse through performance acts and watch live videos</p>
       </div>
 
       <div class="modal-tabs">
@@ -779,7 +803,7 @@
           timing: "4 acts of 5 min each",
           desc: "Mesmerizing international stage acts with LED Wings, Fans, and Flamenco props.",
           image: "Sangeet international.jpg",
-          fallbacks: ["Sangeet-international.jpg", "Sangeet international.png"]
+          instagram: "https://www.instagram.com/reel/DTCnFBLjHYr/"
         },
         {
           title: "Ring Aerial Act",
@@ -787,7 +811,7 @@
           timing: "3 acts of 5 min each",
           desc: "Breathtaking aerial ring, duo rope, and hanging acrobatic performances.",
           image: "Sangeet-ring aerial.jpg",
-          fallbacks: ["Sangeet ring aerial.jpg", "Sangeet-ring-aerial.jpg"]
+          instagram: "https://www.instagram.com/reel/DTC1dehjME_/"
         },
         {
           title: "Fire Act",
@@ -795,7 +819,7 @@
           timing: "4 acts of 5 min each",
           desc: "Thrilling stage fire performances utilizing unique fire props and choreography.",
           image: "Sangeet-fire.jpg",
-          fallbacks: ["Sangeet fire.jpg", "Sangeet-fire.png"]
+          instagram: "https://www.instagram.com/reel/DTC1QpMjESW/"
         },
         {
           title: "LED & UV Act",
@@ -803,7 +827,7 @@
           timing: "4 acts of 5 min each",
           desc: "High-tech LED and ultra-violet suit performances with glowing visual props.",
           image: "Sangeet-led.jpg",
-          fallbacks: ["Sangeet led.jpg", "Sangeet-led.png"]
+          instagram: "https://www.instagram.com/reel/DTC14pKjCnL/"
         },
         {
           title: "Tanoura Act",
@@ -811,7 +835,7 @@
           timing: "4 acts of 5 min each",
           desc: "Traditional and LED Sufi Tanoura spinning performance with custom light/fire props.",
           image: "Sangeet-tanoura.jpg",
-          fallbacks: ["Sangeet tanoura.jpg"]
+          instagram: "https://www.instagram.com/reel/DTC02UGDMKa/"
         },
         {
           title: "Martini Glass Act",
@@ -819,7 +843,7 @@
           timing: "4 acts of 5 min each",
           desc: "Glamorous contortion and dance act performed inside a giant illuminated Martini glass.",
           image: "Sangeet-Martini.jpg",
-          fallbacks: ["Sangeet Martini.jpg", "Sangeet-martini.jpg"]
+          instagram: "https://www.instagram.com/reel/CvotVXiptQi/"
         },
         {
           title: "Pole Act",
@@ -827,7 +851,7 @@
           timing: "4 acts of 5 min each",
           desc: "Sensational artistic pole gymnastics and acrobatic dance routines.",
           image: "Sangeet-pole.jpg",
-          fallbacks: ["Sangeet pole.jpg"]
+          instagram: "https://www.instagram.com/reel/DU2dDtIDATO/"
         },
         {
           title: "Liquid Drummer",
@@ -835,7 +859,7 @@
           timing: "2 acts of 45 min each",
           desc: "High-energy water drum percussion show with illuminated splashes and LED suits.",
           image: "Sangeet-liquid drummer.jpg",
-          fallbacks: ["Sangeet-liquid-drummer.jpg", "Sangeet liquid drummer.jpg"]
+          instagram: "https://www.instagram.com/reel/DTC2DPdjJVC/"
         },
         {
           title: "Anti-Gravity Wall Musicians",
@@ -843,7 +867,7 @@
           timing: "2 acts of 45 min each",
           desc: "Unique musical setup with instrumentalists mounted on a vertical anti-gravity wall.",
           image: "Sangeet-Anti gravity.jpg",
-          fallbacks: ["Sangeet-Anti-gravity.jpg", "Sangeet Anti gravity.jpg"]
+          instagram: "https://www.instagram.com/reel/DTC2eH4DKbx/"
         },
         {
           title: "Russian Stage Live Musicians",
@@ -851,13 +875,7 @@
           timing: "2 acts of 45 min each",
           desc: "Breathtaking mix of live instrumental music and stage ensemble.",
           image: "russian.jpg",
-          fallbacks: [
-            "russian.png",
-            "russian.jpeg",
-            "Sangeet-Russian stage live musicians.jpg",
-            "Sangeet-Russian-stage-live-musicians.jpg",
-            "pro-em.jpg"
-          ]
+          instagram: "https://www.instagram.com/reel/DAk-rYBoAHX/"
         }
       ],
       baraat: [],
@@ -875,17 +893,6 @@
     }
 
     function handleImgError(img) {
-      const fallbacksStr = img.getAttribute('data-fallbacks');
-      if (fallbacksStr) {
-        let fallbacks = JSON.parse(fallbacksStr);
-        if (fallbacks.length > 0) {
-          const nextSrc = fallbacks.shift();
-          img.setAttribute('data-fallbacks', JSON.stringify(fallbacks));
-          img.src = encodeURI(nextSrc);
-          return;
-        }
-      }
-      // If all fallbacks fail, display default brand logo
       img.onerror = null;
       img.src = 'pro-em.jpg';
     }
@@ -912,13 +919,16 @@
       acts.forEach(act => {
         const card = document.createElement('div');
         card.className = 'act-card';
+
+        const videoBtnHtml = act.instagram ? `
+          <a href="${act.instagram}" target="_blank" rel="noopener noreferrer" class="btn-video">
+            ▶ Watch Reel
+          </a>
+        ` : '';
+
         card.innerHTML = `
           <div class="act-card-img-wrapper">
-            <img src="${encodeURI(act.image)}" 
-                 data-fallbacks='${JSON.stringify(act.fallbacks || [])}' 
-                 alt="${act.title}" 
-                 class="act-card-image" 
-                 onerror="handleImgError(this)">
+            <img src="${encodeURI(act.image)}" alt="${act.title}" class="act-card-image" onerror="handleImgError(this)">
           </div>
           <div class="act-card-content">
             <div class="act-title">${act.title}</div>
@@ -927,6 +937,7 @@
               <span class="badge">⏱️ ${act.timing}</span>
             </div>
             <div class="act-desc">${act.desc}</div>
+            ${videoBtnHtml}
           </div>
         `;
         grid.appendChild(card);
