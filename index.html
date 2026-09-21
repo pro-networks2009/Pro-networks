@@ -327,7 +327,6 @@
       margin-bottom: 20px;
     }
 
-    /* BUTTONS FOR PRO EM CATEGORIES */
     .event-buttons-container {
       margin: 15px 0 20px;
       background: rgba(0,0,0,0.3);
@@ -433,30 +432,31 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.92);
+      background: rgba(0, 0, 0, 0.93);
       z-index: 1000;
       backdrop-filter: blur(8px);
       overflow-y: auto;
-      padding: 40px 20px;
+      padding: 30px 15px;
     }
 
     .modal-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      padding: 30px;
+      padding: 25px;
       position: relative;
     }
 
     .close-modal {
       position: absolute;
-      top: 20px;
-      right: 25px;
-      font-size: 2rem;
+      top: 18px;
+      right: 22px;
+      font-size: 2.2rem;
       color: var(--text-muted);
       cursor: pointer;
+      line-height: 1;
       transition: color 0.3s;
     }
 
@@ -494,48 +494,63 @@
       font-weight: 600;
     }
 
-    /* STAGE ACT CARDS GRID */
+    /* STAGE ACT CARDS GRID FIXED FOR UNCROPPED IMAGES */
     .acts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
     }
 
     .act-card {
-      background: rgba(0,0,0,0.4);
+      background: #0d0d12;
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
     }
 
     .act-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       border-color: var(--accent-gold);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
     }
 
-    .act-card-image {
+    /* IMAGE CONTAINER (FIT FULL UNCROPPED IMAGE) */
+    .act-card-img-wrapper {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
-      background: #1a1a24;
+      height: 240px;
+      background: #050507;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
       border-bottom: 1px solid var(--border-color);
     }
 
+    .act-card-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain; /* PROPER FULL PHOTO WITHOUT CROPPING */
+      border-radius: 6px;
+    }
+
     .act-card-content {
-      padding: 18px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       flex-grow: 1;
     }
 
     .act-title {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--accent-gold);
       font-weight: 700;
+      line-height: 1.3;
     }
 
     .act-badges {
@@ -545,27 +560,27 @@
     }
 
     .badge {
-      font-size: 0.75rem;
-      background: rgba(212, 175, 55, 0.15);
+      font-size: 0.78rem;
+      background: rgba(212, 175, 55, 0.12);
       color: #f3e5ab;
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
       border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .act-desc {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     .empty-category-msg {
       grid-column: 1 / -1;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
       color: var(--text-muted);
     }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid var(--border-color);
       padding: 40px 5% 20px;
@@ -640,7 +655,6 @@
             <h4>Events • Celebrations • Corporate Functions</h4>
             <p>Complete entertainment solutions designed for wedding celebrations, corporate galas, and special occasions.</p>
 
-            <!-- CLICKABLE CATEGORY BUTTONS -->
             <div class="event-buttons-container">
               <div class="event-buttons-title">✨ Select Event Type</div>
               <div class="event-type-buttons">
@@ -746,7 +760,6 @@
         <p style="color:var(--text-muted); font-size:0.9rem;">Browse through performance acts and photos</p>
       </div>
 
-      <!-- CATEGORY TABS INSIDE MODAL -->
       <div class="modal-tabs">
         <button class="tab-btn" id="tab-sangeet" onclick="switchCategory('sangeet')">Sangeet Stage Acts</button>
         <button class="tab-btn" id="tab-baraat" onclick="switchCategory('baraat')">Baraat</button>
@@ -754,7 +767,6 @@
         <button class="tab-btn" id="tab-serve" onclick="switchCategory('serve')">Serve</button>
       </div>
 
-      <!-- GRID FOR STAGE ACT CARDS -->
       <div id="actsGrid" class="acts-grid"></div>
     </div>
   </div>
@@ -763,7 +775,6 @@
     <p>© PRO NETWORKS. All Rights Reserved.</p>
   </footer>
 
-  <!-- JAVASCRIPT FOR EXACT GITHUB FILENAMES -->
   <script>
     const galleryData = {
       sangeet: [
@@ -772,70 +783,80 @@
           artists: "3 to 6 Artists",
           timing: "4 acts of 5 min each",
           desc: "Mesmerizing international stage acts with LED Wings, Fans, and Flamenco props.",
-          image: "Sangeet international.jpg"
+          image: "Sangeet international.jpg",
+          fallbacks: ["Sangeet international.png", "Sangeet-international.jpg"]
         },
         {
           title: "Ring Aerial Act",
           artists: "1 to 2 Artists",
           timing: "3 acts of 5 min each",
           desc: "Breathtaking aerial ring, duo rope, and hanging acrobatic performances.",
-          image: "Sangeet-ring aerial.jpg"
+          image: "Sangeet-ring aerial.jpg",
+          fallbacks: ["Sangeet-ring aerial.png"]
         },
         {
           title: "Fire Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "Thrilling stage fire performances utilizing unique fire props and choreography.",
-          image: "Sangeet-fire.jpg"
+          image: "Sangeet-fire.jpg",
+          fallbacks: ["Sangeet-fire.png"]
         },
         {
           title: "LED & UV Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "High-tech LED and ultra-violet suit performances with glowing visual props.",
-          image: "Sangeet-led.jpg"
+          image: "Sangeet-led.jpg",
+          fallbacks: ["Sangeet-led.png"]
         },
         {
           title: "Tanoura Act",
           artists: "1 Artist",
           timing: "4 acts of 5 min each",
           desc: "Traditional and LED Sufi Tanoura spinning performance with custom light/fire props.",
-          image: "Sangeet-tanoura.jpg"
+          image: "Sangeet-tanoura.jpg",
+          fallbacks: ["Sangeet-tanoura.png"]
         },
         {
           title: "Martini Glass Act",
           artists: "1 to 2 Artists",
           timing: "4 acts of 5 min each",
           desc: "Glamorous contortion and dance act performed inside a giant illuminated Martini glass.",
-          image: "Sangeet-Martini.jpg"
+          image: "Sangeet-Martini.jpg",
+          fallbacks: ["Sangeet-Martini.png"]
         },
         {
           title: "Pole Act",
           artists: "2 to 4 Artists",
           timing: "4 acts of 5 min each",
           desc: "Sensational artistic pole gymnastics and acrobatic dance routines.",
-          image: "Sangeet-pole.jpg"
+          image: "Sangeet-pole.jpg",
+          fallbacks: ["Sangeet-pole.png"]
         },
         {
           title: "Liquid Drummer",
           artists: "1 to 3 Artists",
           timing: "2 acts of 45 min each",
           desc: "High-energy water drum percussion show with illuminated splashes and LED suits.",
-          image: "Sangeet-liquid drummer.jpg"
+          image: "Sangeet-liquid drummer.jpg",
+          fallbacks: ["Sangeet-liquid drummer.png", "Sangeet-liquid drumme.jpg"]
         },
         {
           title: "Anti-Gravity Wall Musicians",
           artists: "2 to 9 Artists",
           timing: "2 acts of 45 min each",
           desc: "Unique musical setup with instrumentalists mounted on a vertical anti-gravity wall.",
-          image: "Sangeet-Anti gravity.jpg"
+          image: "Sangeet-Anti gravity.jpg",
+          fallbacks: ["Sangeet-Anti gravity.png"]
         },
         {
           title: "Russian Stage Live Musicians",
           artists: "1 to 9 Artists",
           timing: "2 acts of 45 min each",
           desc: "Breathtaking mix of live instrumental music and stage ensemble.",
-          image: "Sangeet-Russian stage live musicians.jpg"
+          image: "Sangeet-Russian stage live musicians.jpg",
+          fallbacks: ["Sangeet-Russian stage.jpg", "Sangeet-Russian stage live musicians.png", "Sangeet-Russian stage .jpg"]
         }
       ],
       baraat: [],
@@ -850,6 +871,22 @@
 
     function closeModal() {
       document.getElementById('galleryModal').style.display = 'none';
+    }
+
+    // AUTO RETRY FALLBACK IF FILENAME WAS TRUNCATED ON GITHUB UPLOAD
+    function handleImgError(img) {
+      const fallbacksStr = img.getAttribute('data-fallbacks');
+      if (fallbacksStr) {
+        let fallbacks = JSON.parse(fallbacksStr);
+        if (fallbacks.length > 0) {
+          const nextSrc = fallbacks.shift();
+          img.setAttribute('data-fallbacks', JSON.stringify(fallbacks));
+          img.src = encodeURI(nextSrc);
+          return;
+        }
+      }
+      img.onerror = null;
+      img.src = 'pro-em.jpg';
     }
 
     function switchCategory(category) {
@@ -875,7 +912,13 @@
         const card = document.createElement('div');
         card.className = 'act-card';
         card.innerHTML = `
-          <img src="${encodeURI(act.image)}" alt="${act.title}" class="act-card-image" onerror="this.onerror=null; this.src='pro-em.jpg';">
+          <div class="act-card-img-wrapper">
+            <img src="${encodeURI(act.image)}" 
+                 data-fallbacks='${JSON.stringify(act.fallbacks || [])}' 
+                 alt="${act.title}" 
+                 class="act-card-image" 
+                 onerror="handleImgError(this)">
+          </div>
           <div class="act-card-content">
             <div class="act-title">${act.title}</div>
             <div class="act-badges">
