@@ -569,7 +569,6 @@
       line-height: 1.5;
     }
 
-    /* SMALL VIDEO BUTTON STYLING */
     .btn-video {
       display: inline-flex;
       align-items: center;
@@ -724,7 +723,19 @@
             <div class="brand-tag">Event Management</div>
             <h3>PRO ACTIVE</h3>
             <h4>Planning • Coordination • Execution</h4>
-            <p>Complete end-to-end event management solutions from initial planning and coordination to final execution.</p>
+            <p>Complete end-to-end event management, amusement rides, carnival setups, interactive game stalls, and decor.</p>
+            
+            <div class="event-buttons-container">
+              <div class="event-buttons-title">🎯 Select Activity Category</div>
+              <div class="event-type-buttons">
+                <button class="event-btn" onclick="openGallery('amusement', 'active')">🎡 Amusement Rides</button>
+                <button class="event-btn" onclick="openGallery('casino', 'active')">🎰 Casino Lounge</button>
+                <button class="event-btn" onclick="openGallery('foodstall', 'active')">🍿 Food Stalls</button>
+                <button class="event-btn" onclick="openGallery('gamestall', 'active')">🎯 Game Stalls</button>
+                <button class="event-btn" onclick="openGallery('wooden', 'active')">🪵 Wooden Games</button>
+              </div>
+            </div>
+
             <a href="https://wa.me/917710996547" class="whatsapp-btn" target="_blank" style="margin-top:auto;">WhatsApp PRO ACTIVE</a>
           </div>
         </div>
@@ -813,12 +824,18 @@
       comedian: 'Comedians & Stand-up',
       singer: 'Playback & Live Singers',
       sufi: 'Sufi & Classical Musicians',
-      talent: 'Unique & Special Talent'
+      talent: 'Unique & Special Talent',
+      amusement: 'Amusement & Carnival Rides',
+      casino: 'Casino & Vegas Games Lounge',
+      foodstall: 'Interactive Food Stalls',
+      gamestall: 'Interactive Game Stalls',
+      wooden: 'Wooden & Vintage Games'
     };
 
     const brandTabs = {
       em: ['sangeet', 'baraat', 'reception', 'serve'],
-      vision: ['actor', 'anchor', 'comedian', 'singer', 'sufi', 'talent']
+      vision: ['actor', 'anchor', 'comedian', 'singer', 'sufi', 'talent'],
+      active: ['amusement', 'casino', 'foodstall', 'gamestall', 'wooden']
     };
 
     const galleryData = {
@@ -877,21 +894,21 @@
 
       // PRO VISION
       actor: [
-        { title: "Celebrity Actor Presence", artists: "Celebrity / Actor", timing: "Appearance / Performance", desc: "Exclusive celebrity guest appearances, ribbon cutting, or live performance for high-profile events.", image: "Provision-actor1.jpg" },
-        { title: "Bollywood Actor Presence", artists: "Celebrity / Actor", timing: "Appearance / Interaction", desc: "Renowned film actor available for stage guesting, fan interactions, and event launches.", image: "Provision-actor2.jpg" },
-        { title: "Star Celebrity Act", artists: "Celebrity / Actor", timing: "Live Guest Appearance", desc: "Star-studded presence to elevate wedding receptions, brand launches, and corporate galas.", image: "Provision-actor3.jpg" },
-        { title: "Film & TV Actor", artists: "Actor / Artist", timing: "Stage / Meet & Greet", desc: "Popular screen actor bringing stardom and excitement to special events.", image: "Provision-actor4.jpg" },
-        { title: "Celebrity Guest Artist", artists: "Celebrity / Actor", timing: "Event Presence", desc: "Top-tier television and film personality for grand wedding entries and inaugurations.", image: "Provision-actor5.jpg" },
-        { title: "Bollywood Talent", artists: "Bollywood Actor", timing: "Special Guest Appearance", desc: "Celebrity actor for brand endorsements, VIP meet & greets, and stage appearances.", image: "Provision-actor6.jpg" },
-        { title: "Screen Celebrity", artists: "Actor / Star", timing: "Event Appearance", desc: "Featured film personality adding glamour and high visibility to your celebration.", image: "Provision-actor7.jpg" },
-        { title: "Renowned Actor", artists: "Celebrity Artist", timing: "Stage Performance", desc: "Professional film & drama actor for corporate shows and high-end celebrations.", image: "Provision-actor8.jpg" },
-        { title: "Featured Celebrity", artists: "Bollywood Personality", timing: "Chief Guest / Appearance", desc: "High-profile celebrity presence tailored for product launches and luxury galas.", image: "Provision-actor9.jpg" },
-        { title: "Bollywood Personality", artists: "Actor / Star", timing: "VIP Guest", desc: "Popular actor bringing red carpet excitement and media presence to your venue.", image: "Provision-actor10.jpg" },
-        { title: "Lead Film Actor", artists: "Celebrity Artist", timing: "Live Appearance", desc: "Leading screen star available for grand inaugurations, stage intros, and awards.", image: "Provision-actor11.jpg" },
-        { title: "Celebrity Stage Star", artists: "Actor / Performer", timing: "Live Stage Show", desc: "Charismatic actor delivering dynamic stage appearances and guest engagement.", image: "Provision-actor12.jpg" },
-        { title: "Featured Star Talent", artists: "Celebrity Actor", timing: "VIP Event Presence", desc: "Renowned film and TV talent for exclusive luxury gatherings and corporate galas.", image: "Provision-actor13.jpg" },
-        { title: "Iconic Screen Actor", artists: "Star Personality", timing: "Special Guest", desc: "Iconic celebrity presence creating unforgettable memories for your guests.", image: "Provision-actor14.jpg" },
-        { title: "Celebrity Brand Ambassador", artists: "Lead Actor", timing: "Full Event Guest", desc: "High-profile actor for brand endorsement events, galas, and grand celebrations.", image: "Provision-actor15.jpg" }
+        { title: "Celebrity Actor Presence 1", artists: "Celebrity / Actor", timing: "Appearance / Performance", desc: "Exclusive celebrity guest appearances, ribbon cutting, or live performance for high-profile events.", image: "Provision-actor1.jpg" },
+        { title: "Bollywood Actor Presence 2", artists: "Celebrity / Actor", timing: "Appearance / Interaction", desc: "Renowned film actor available for stage guesting, fan interactions, and event launches.", image: "Provision-actor2.jpg" },
+        { title: "Star Celebrity Act 3", artists: "Celebrity / Actor", timing: "Live Guest Appearance", desc: "Star-studded presence to elevate wedding receptions, brand launches, and corporate galas.", image: "Provision-actor3.jpg" },
+        { title: "Film & TV Actor 4", artists: "Actor / Artist", timing: "Stage / Meet & Greet", desc: "Popular screen actor bringing stardom and excitement to special events.", image: "Provision-actor4.jpg" },
+        { title: "Celebrity Guest Artist 5", artists: "Celebrity / Actor", timing: "Event Presence", desc: "Top-tier television and film personality for grand wedding entries and inaugurations.", image: "Provision-actor5.jpg" },
+        { title: "Bollywood Talent 6", artists: "Bollywood Actor", timing: "Special Guest Appearance", desc: "Celebrity actor for brand endorsements, VIP meet & greets, and stage appearances.", image: "Provision-actor6.jpg" },
+        { title: "Screen Celebrity 7", artists: "Actor / Star", timing: "Event Appearance", desc: "Featured film personality adding glamour and high visibility to your celebration.", image: "Provision-actor7.jpg" },
+        { title: "Renowned Actor 8", artists: "Celebrity Artist", timing: "Stage Performance", desc: "Professional film & drama actor for corporate shows and high-end celebrations.", image: "Provision-actor8.jpg" },
+        { title: "Featured Celebrity 9", artists: "Bollywood Personality", timing: "Chief Guest / Appearance", desc: "High-profile celebrity presence tailored for product launches and luxury galas.", image: "Provision-actor9.jpg" },
+        { title: "Bollywood Personality 10", artists: "Actor / Star", timing: "VIP Guest", desc: "Popular actor bringing red carpet excitement and media presence to your venue.", image: "Provision-actor10.jpg" },
+        { title: "Lead Film Actor 11", artists: "Celebrity Artist", timing: "Live Appearance", desc: "Leading screen star available for grand inaugurations, stage intros, and awards.", image: "Provision-actor11.jpg" },
+        { title: "Celebrity Stage Star 12", artists: "Actor / Performer", timing: "Live Stage Show", desc: "Charismatic actor delivering dynamic stage appearances and guest engagement.", image: "Provision-actor12.jpg" },
+        { title: "Featured Star Talent 13", artists: "Celebrity Actor", timing: "VIP Event Presence", desc: "Renowned film and TV talent for exclusive luxury gatherings and corporate galas.", image: "Provision-actor13.jpg" },
+        { title: "Iconic Screen Actor 14", artists: "Star Personality", timing: "Special Guest", desc: "Iconic celebrity presence creating unforgettable memories for your guests.", image: "Provision-actor14.jpg" },
+        { title: "Celebrity Brand Ambassador 15", artists: "Lead Actor", timing: "Full Event Guest", desc: "High-profile actor for brand endorsement events, galas, and grand celebrations.", image: "Provision-actor15.jpg" }
       ],
       anchor: [
         { title: "Celebrity Emcee & Anchor", artists: "1 Anchor", timing: "Full Event Hosting", desc: "Charismatic, professional anchor keeping audiences engaged with seamless show flow.", image: "Provision-anchor1.jpg" },
@@ -938,6 +955,67 @@
         { title: "Unique Stage Talent 6", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Customized act designed specifically to align with unique event themes.", image: "Provision-talent6.jpg" },
         { title: "Unique Stage Talent 7", artists: "Specialist Performer", timing: "30 to 45 min", desc: "High-skill artistic act guaranteed to captivate and amaze guests.", image: "Provision-talent7.jpg" },
         { title: "Unique Stage Talent 8", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Bespoke stage showcase delivering world-class specialty entertainment.", image: "Provision-talent8.jpg" }
+      ],
+
+      // PRO ACTIVE
+      amusement: [
+        { title: "Amusement Ride Setup 1", artists: "Ride & Operators", timing: "Event Duration", desc: "Exciting carnival amusement ride setup for high-engagement outdoor and grand events.", image: "Proactive-amusement1.jpg" },
+        { title: "Amusement Ride Setup 2", artists: "Ride & Operators", timing: "Event Duration", desc: "Safe, high-fun amusement setup perfect for family carnivals and large parties.", image: "Proactive-amusement2.jpg" },
+        { title: "Amusement Ride Setup 3", artists: "Ride & Operators", timing: "Event Duration", desc: "Vibrant carnival installation creating a festive fairground atmosphere.", image: "Proactive-amusement3.jpg" },
+        { title: "Amusement Ride Setup 4", artists: "Ride & Operators", timing: "Event Duration", desc: "Interactive mechanical attraction for guests of all ages.", image: "Proactive-amusement4.jpg" },
+        { title: "Amusement Ride Setup 5", artists: "Ride & Operators", timing: "Event Duration", desc: "Popular party ride attraction providing non-stop entertainment.", image: "Proactive-amusement5.jpg" },
+        { title: "Amusement Ride Setup 6", artists: "Ride & Operators", timing: "Event Duration", desc: "Custom amusement setup tailored for large venue grounds and festivals.", image: "Proactive-amusement6.jpg" },
+        { title: "Amusement Ride Setup 7", artists: "Ride & Operators", timing: "Event Duration", desc: "Thrilling event ride complete with safety measures and managed operations.", image: "Proactive-amusement7.jpg" },
+        { title: "Amusement Ride Setup 8", artists: "Ride & Operators", timing: "Event Duration", desc: "Classic carnival attraction ideal for kid zones and family days.", image: "Proactive-amusement8.jpg" },
+        { title: "Amusement Ride Setup 9", artists: "Ride & Operators", timing: "Event Duration", desc: "Eye-catching decorative amusement setup to elevate event scale.", image: "Proactive-amusement9.jpg" },
+        { title: "Amusement Ride Setup 10", artists: "Ride & Operators", timing: "Event Duration", desc: "Grand carnival ride setup delivering memorable experiences for guests.", image: "Proactive-amusement10.jpg" },
+        { title: "Amusement Ride Setup 11", artists: "Ride & Operators", timing: "Event Duration", desc: "Ultimate event amusement attraction tailored for grand celebratory functions.", image: "Proactive-amusement11.jpg" }
+      ],
+      casino: [
+        { title: "Vegas Casino Station 1", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Authentic casino gaming table experience with professional dealers and customized chips.", image: "Proactive-casinol1.jpg" },
+        { title: "Vegas Casino Station 2", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "High-end poker & roulette lounge setup for corporate gala nights and private parties.", image: "Proactive-casinol2.jpg" },
+        { title: "Vegas Casino Station 3", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Interactive gaming tables bringing casino-style glamour and fun.", image: "Proactive-casinol3.jpg" },
+        { title: "Vegas Casino Station 4", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Luxury black-jack setup managed by trained casino dealers.", image: "Proactive-casinol4.jpg" },
+        { title: "Vegas Casino Station 5", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Complete casino zone branding and tables for high-profile lounge events.", image: "Proactive-casinol5.jpg" },
+        { title: "Vegas Casino Station 6", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Engaging cocktail-hour casino game table for guests.", image: "Proactive-casinol6.jpg" },
+        { title: "Vegas Casino Station 7", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Exclusive casino table hire complete with decorative accessories.", image: "Proactive-casinol7.jpg" },
+        { title: "Vegas Casino Station 8", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Royal casino floor concept with multiple game options.", image: "Proactive-casinol8.jpg" },
+        { title: "Vegas Casino Station 9", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Thrilling casino lounge experience with fun currency and prizes.", image: "Proactive-casinol9.jpg" },
+        { title: "Vegas Casino Station 10", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Custom themed casino lounge designed for after-parties.", image: "Proactive-casinol10.jpg" },
+        { title: "Vegas Casino Station 11", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Grand casino experience with professional croupiers and lighting.", image: "Proactive-casinol11.jpg" },
+        { title: "Vegas Casino Station 12", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Premium casino game zone setup for luxury corporate galas.", image: "Proactive-casinol12.jpg" }
+      ],
+      foodstall: [
+        { title: "Interactive Food Stall 1", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Customized live interactive food live counter with decorative branding.", image: "Proactive-foodstall1.jpg" },
+        { title: "Interactive Food Stall 2", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Carnival style popcorn, candy floss, or special street food setup.", image: "Proactive-foodstall2.jpg" },
+        { title: "Interactive Food Stall 3", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Decorative live snack stall tailored for sangeet and high-tea counters.", image: "Proactive-foodstall3.jpg" },
+        { title: "Interactive Food Stall 4", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Specialty dessert and beverage live counter station.", image: "Proactive-foodstall4.jpg" },
+        { title: "Interactive Food Stall 5", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Theme-based live food kiosk bringing street culinary charm.", image: "Proactive-foodstall5.jpg" },
+        { title: "Interactive Food Stall 6", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Deluxe interactive food counter for cocktail and carnival zones.", image: "Proactive-foodstall6.jpg" }
+      ],
+      gamestall: [
+        { title: "Carnival Game Stall 1", artists: "Attendant + Props", timing: "Event Duration", desc: "Fun interactive carnival skill game stall with custom prize distribution.", image: "Proactive-gamestall1.jpg" },
+        { title: "Carnival Game Stall 2", artists: "Attendant + Props", timing: "Event Duration", desc: "Classic ring toss, balloon shooting, or target carnival games.", image: "Proactive-gamestall2.jpg" },
+        { title: "Carnival Game Stall 3", artists: "Attendant + Props", timing: "Event Duration", desc: "Family game booth designed for max guest participation.", image: "Proactive-gamestall3.jpg" },
+        { title: "Carnival Game Stall 4", artists: "Attendant + Props", timing: "Event Duration", desc: "Interactive game booth for corporate family days and kid zones.", image: "Proactive-gamestall4.jpg" },
+        { title: "Carnival Game Stall 5", artists: "Attendant + Props", timing: "Event Duration", desc: "Skill game challenge stall with customized event props.", image: "Proactive-gamestall5.jpg" },
+        { title: "Carnival Game Stall 6", artists: "Attendant + Props", timing: "Event Duration", desc: "Vibrant traditional fairground game booth with managed staff.", image: "Proactive-gamestall6.jpg" },
+        { title: "Carnival Game Stall 7", artists: "Attendant + Props", timing: "Event Duration", desc: "Popular carnival activity counter for guests of all age groups.", image: "Proactive-gamestall7.jpg" },
+        { title: "Carnival Game Stall 8", artists: "Attendant + Props", timing: "Event Duration", desc: "Customized party activity game stall with decorative backdrop.", image: "Proactive-gamestall8.jpg" },
+        { title: "Carnival Game Stall 9", artists: "Attendant + Props", timing: "Event Duration", desc: "High-engagement competition stall for party guests.", image: "Proactive-gamestall9.jpg" },
+        { title: "Carnival Game Stall 10", artists: "Attendant + Props", timing: "Event Duration", desc: "Grand carnival game zone installation for wedding pre-functions.", image: "Proactive-gamestall10.jpg" }
+      ],
+      wooden: [
+        { title: "Vintage Wooden Game 1", artists: "Game Setup", timing: "Event Duration", desc: "Rustic handcrafted giant wooden game setup for luxury outdoor lawn events.", image: "Proactive-wooden1.jpg" },
+        { title: "Vintage Wooden Game 2", artists: "Game Setup", timing: "Event Duration", desc: "Classic wooden lawn games adding vintage aesthetic charm and fun.", image: "Proactive-wooden2.jpg" },
+        { title: "Vintage Wooden Game 3", artists: "Game Setup", timing: "Event Duration", desc: "Handcrafted giant Jenga, Connect Four, or bowling wooden games.", image: "Proactive-wooden3.jpg" },
+        { title: "Vintage Wooden Game 4", artists: "Game Setup", timing: "Event Duration", desc: "Lawn activity game station made of premium polished wood.", image: "Proactive-wooden4.jpg" },
+        { title: "Vintage Wooden Game 5", artists: "Game Setup", timing: "Event Duration", desc: "Interactive wooden board game station for cocktail lounge areas.", image: "Proactive-wooden5.jpg" },
+        { title: "Vintage Wooden Game 6", artists: "Game Setup", timing: "Event Duration", desc: "Traditional aesthetic game stall for rustic and royal wedding functions.", image: "Proactive-wooden6.jpg" },
+        { title: "Vintage Wooden Game 7", artists: "Game Setup", timing: "Event Duration", desc: "Giant wooden puzzle and strategy game booth for guests.", image: "Proactive-wooden7.jpg" },
+        { title: "Vintage Wooden Game 8", artists: "Game Setup", timing: "Event Duration", desc: "Elegant wooden activity setup enhancing outdoor event decor.", image: "Proactive-wooden8.jpg" },
+        { title: "Vintage Wooden Game 9", artists: "Game Setup", timing: "Event Duration", desc: "High-quality wooden game station suitable for all age groups.", image: "Proactive-wooden9.jpg" },
+        { title: "Vintage Wooden Game 10", artists: "Game Setup", timing: "Event Duration", desc: "Complete vintage wooden game lounge setup for luxury celebrations.", image: "Proactive-wooden10.jpg" }
       ]
     };
 
@@ -1032,4 +1110,4 @@
     };
   </script>
 </body>
-</html>
+  </html>
