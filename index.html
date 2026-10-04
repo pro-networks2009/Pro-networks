@@ -733,6 +733,10 @@
                 <button class="event-btn" onclick="openGallery('foodstall', 'active')">🍿 Food Stalls</button>
                 <button class="event-btn" onclick="openGallery('gamestall', 'active')">🎯 Game Stalls</button>
                 <button class="event-btn" onclick="openGallery('wooden', 'active')">🪵 Wooden Games</button>
+                <button class="event-btn" onclick="openGallery('pagoda', 'active')">🏯 Pagoda</button>
+                <button class="event-btn" onclick="openGallery('germanhanger', 'active')">🇩🇪 German Hanger</button>
+                <button class="event-btn" onclick="openGallery('stalls', 'active')">🎪 Stalls</button>
+                <button class="event-btn" onclick="openGallery('stage', 'active')">🎭 Stage</button>
               </div>
             </div>
 
@@ -829,13 +833,27 @@
       casino: 'Casino & Vegas Games Lounge',
       foodstall: 'Interactive Food Stalls',
       gamestall: 'Interactive Game Stalls',
-      wooden: 'Wooden & Vintage Games'
+      wooden: 'Wooden & Vintage Games',
+      pagoda: 'Pagoda',
+      germanhanger: 'German Hanger',
+      stalls: 'Stalls',
+      stage: 'Stage'
     };
 
     const brandTabs = {
       em: ['sangeet', 'baraat', 'reception', 'serve'],
       vision: ['actor', 'anchor', 'comedian', 'singer', 'sufi', 'talent'],
-      active: ['amusement', 'casino', 'foodstall', 'gamestall', 'wooden']
+      active: [
+        'amusement',
+        'casino',
+        'foodstall',
+        'gamestall',
+        'wooden',
+        'pagoda',
+        'germanhanger',
+        'stalls',
+        'stage'
+      ]
     };
 
     const galleryData = {
@@ -1016,6 +1034,130 @@
         { title: "Vintage Wooden Game 8", artists: "Game Setup", timing: "Event Duration", desc: "Elegant wooden activity setup enhancing outdoor event decor.", image: "Proactive-wooden8.jpg" },
         { title: "Vintage Wooden Game 9", artists: "Game Setup", timing: "Event Duration", desc: "High-quality wooden game station suitable for all age groups.", image: "Proactive-wooden9.jpg" },
         { title: "Vintage Wooden Game 10", artists: "Game Setup", timing: "Event Duration", desc: "Complete vintage wooden game lounge setup for luxury celebrations.", image: "Proactive-wooden10.jpg" }
+      ],
+
+      pagoda: [
+        {
+          title: "Pagoda Setup 1",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Elegant pagoda setup for outdoor events, lounges, and premium celebrations.",
+          image: "Proactive-Pagoda.jpg"
+        },
+        {
+          title: "Pagoda Setup 2",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Elegant pagoda setup for outdoor events, lounges, and premium celebrations.",
+          image: "Proactive-Pagoda1.jpg"
+        },
+        {
+          title: "Pagoda Setup 3",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Elegant pagoda setup for outdoor events, lounges, and premium celebrations.",
+          image: "Proactive-Pagoda3.jpg"
+        },
+        {
+          title: "Pagoda Setup 4",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Elegant pagoda setup for outdoor events, lounges, and premium celebrations.",
+          image: "Proactive-Pagoda4.jpg"
+        },
+        {
+          title: "Pagoda Setup 5",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Elegant pagoda setup for outdoor events, lounges, and premium celebrations.",
+          image: "Proactive-Pagoda5.jpg"
+        },
+        {
+          title: "Pagoda Setup 6",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Elegant pagoda setup for outdoor events, lounges, and premium celebrations.",
+          image: "Proactive-Pagoda6.jpg"
+        }
+      ],
+
+      germanhanger: [
+        {
+          title: "German Hanger Setup 1",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Premium German hanger setup for large gatherings, celebrations, and special events.",
+          image: "Proactive-Germanhanger1.jpg"
+        },
+        {
+          title: "German Hanger Setup 2",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Premium German hanger setup for large gatherings, celebrations, and special events.",
+          image: "Proactive-Germanhanger2.jpg"
+        },
+        {
+          title: "German Hanger Setup 3",
+          artists: "Event Setup",
+          timing: "Event Duration",
+          desc: "Premium German hanger setup for large gatherings, celebrations, and special events.",
+          image: "Proactive-Germanhanger3.jpg"
+        }
+      ],
+
+      stalls: [
+        {
+          title: "Event Stall Setup 1",
+          artists: "Stall Setup",
+          timing: "Event Duration",
+          desc: "Custom event stall setup for food, games, branding, and guest engagement.",
+          image: "Proactive-Stall1.jpg"
+        },
+        {
+          title: "Event Stall Setup 2",
+          artists: "Stall Setup",
+          timing: "Event Duration",
+          desc: "Custom event stall setup for food, games, branding, and guest engagement.",
+          image: "Proactive-Stall2.jpg"
+        },
+        {
+          title: "Event Stall Setup 3",
+          artists: "Stall Setup",
+          timing: "Event Duration",
+          desc: "Custom event stall setup for food, games, branding, and guest engagement.",
+          image: "Proactive-Stall3.jpg"
+        }
+      ],
+
+      stage: [
+        {
+          title: "Event Stage Setup 1",
+          artists: "Stage Setup",
+          timing: "Event Duration",
+          desc: "Professional event stage setup designed for performances, celebrations, and live entertainment.",
+          image: "Proactive-Stage1.jpg"
+        },
+        {
+          title: "Event Stage Setup 2",
+          artists: "Stage Setup",
+          timing: "Event Duration",
+          desc: "Professional event stage setup designed for performances, celebrations, and live entertainment.",
+          image: "Proactive-Stage2.jpg"
+        },
+        {
+          title: "Event Stage Setup 3",
+          artists: "Stage Setup",
+          timing: "Event Duration",
+          desc: "Professional event stage setup designed for performances, celebrations, and live entertainment.",
+          image: "Proactive-Stage3.jpg"
+        },
+        {
+          title: "Event Stage Setup 4",
+          artists: "Stage Setup",
+          timing: "Event Duration",
+          desc: "Professional event stage setup designed for performances, celebrations, and live entertainment.",
+          image: "Proactive-Stage4.jpg"
+        }
       ]
     };
 
@@ -1110,4 +1252,4 @@
     };
   </script>
 </body>
-</html>
+                  </html>
