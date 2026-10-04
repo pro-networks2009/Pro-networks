@@ -1,453 +1,1113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO NETWORKS | Luxury Event Management</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0f0f11;
-            --card-bg: #18181c;
-            --accent-gold: #d4af37;
-            --accent-gold-light: #f3e5ab;
-            --text-light: #f5f5f7;
-            --text-muted: #a1a1a6;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Outfit', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRO NETWORKS | Events • Entertainment • Experiences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --bg-card: #131318;
+      --accent-gold: #d4af37;
+      --accent-gold-hover: #f3e5ab;
+      --text-main: #f0f0f5;
+      --text-muted: #9a9ab0;
+      --border-color: rgba(212, 175, 55, 0.2);
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: var(--font-body);
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-        /* Navigation */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            background: rgba(15, 15, 17, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
-        }
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 12, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 5%;
+    }
 
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            letter-spacing: 2px;
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
 
-        nav a:hover {
-            color: var(--accent-gold);
-        }
+    .brand-logo img {
+      height: 48px;
+      width: auto;
+      border-radius: 6px;
+    }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(15, 15, 17, 0.75), rgba(15, 15, 17, 0.85)), url('YOUR_MAIN_IMAGE.jpg') center/cover no-repeat;
-            padding: 0 1rem;
-        }
+    .brand-logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .hero-content h1 {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-        }
+    .brand-logo-text small {
+      font-size: 0.6rem;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-        /* Brands Section */
-        .brands-section {
-            padding: 5rem 5%;
-            text-align: center;
-        }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
 
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 3rem;
-        }
+    nav a:hover {
+      color: var(--accent-gold);
+    }
 
-        .brand-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .btn-touch {
+      background: linear-gradient(135deg, var(--accent-gold), #aa820a);
+      color: #000 !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600 !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
 
-        .brand-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
+    .btn-touch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
 
-        .brand-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-gold);
-        }
+    /* HERO SECTION */
+    .hero {
+      padding: 80px 5% 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
 
-        .brand-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
+    .hero-img {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
 
-        .brand-card-body {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
+    .hero-img img {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid var(--border-color);
+    }
 
-        .brand-card h3 {
-            font-family: var(--font-heading);
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
+    .hero-content {
+      flex: 1.2;
+      min-width: 300px;
+    }
 
-        .brand-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
+    .hero-subtitle {
+      color: var(--accent-gold);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+    .hero-content h1 span {
+      color: var(--accent-gold);
+      font-style: italic;
+    }
 
-        .btn-gold {
-            background: var(--accent-gold);
-            color: #000;
-        }
+    .hero-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
 
-        .btn-gold:hover {
-            background: var(--accent-gold-light);
-        }
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
 
-        .btn-whatsapp {
-            background: #25D366;
-            color: #fff;
-        }
+    .btn-primary {
+      background: var(--accent-gold);
+      color: #000;
+      padding: 12px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
 
-        .btn-whatsapp:hover {
-            opacity: 0.9;
-        }
+    .btn-primary:hover {
+      background: var(--accent-gold-hover);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
 
-        /* Gallery Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 3rem 5%;
-        }
+    .btn-secondary {
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 12px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
 
-        .modal-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-        }
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.1);
+    }
 
-        .close-modal {
-            position: absolute;
-            top: -2rem;
-            right: 0;
-            font-size: 2.5rem;
-            color: var(--accent-gold);
-            cursor: pointer;
-        }
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
 
-        .modal-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
+    .stat-item b {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+    }
 
-        .filter-btn {
-            background: transparent;
-            border: 1px solid var(--accent-gold);
-            color: var(--text-light);
-            padding: 0.5rem 1.25rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+    .stat-item span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--accent-gold);
-            color: #000;
-        }
+    /* SERVICES SECTION */
+    .services-section {
+      padding: 80px 5%;
+      background: rgba(19, 19, 24, 0.5);
+    }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
+    .section-title {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 50px;
+    }
 
-        .gallery-item {
-            background: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+    .section-title span {
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      margin: 8px 0;
+    }
 
-        .gallery-item-info {
-            padding: 1rem;
-            text-align: left;
-        }
+    .section-title p {
+      color: var(--text-muted);
+    }
 
-        .gallery-item-info h4 {
-            color: var(--accent-gold);
-            font-size: 1.1rem;
-        }
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
 
-        .gallery-item-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-    </style>
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    .service-card-img {
+      height: 180px;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s;
+    }
+
+    .service-card-body {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .brand-tag {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .service-card h4 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #b0b0cc;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .event-buttons-container {
+      margin: 15px 0 20px;
+      background: rgba(0,0,0,0.3);
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .event-buttons-title {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .event-type-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .event-btn {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--accent-gold);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .event-btn:hover {
+      background: var(--accent-gold);
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .whatsapp-btn {
+      margin-top: auto;
+      display: inline-block;
+      text-align: center;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* ABOUT & CONTACT SECTIONS */
+    .about-section, .contact-section {
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 25px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: border-color 0.3s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--accent-gold);
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+    }
+
+    /* GALLERY MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.93);
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      overflow-y: auto;
+      padding: 30px 15px;
+    }
+
+    .modal-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 25px;
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 2.2rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+
+    .close-modal:hover {
+      color: var(--accent-gold);
+    }
+
+    .modal-title-area {
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+    }
+
+    .modal-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent-gold);
+      color: #000;
+      border-color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    /* ACT CARDS GRID */
+    .acts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .act-card {
+      background: #0d0d12;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .act-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+    }
+
+    .act-card-img-wrapper {
+      width: 100%;
+      height: 240px;
+      background: #050507;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .act-card-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .act-card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .act-title {
+      font-size: 1.25rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .act-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      background: rgba(212, 175, 55, 0.12);
+      color: #f3e5ab;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .act-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .btn-video {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-hover);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 16px;
+      text-decoration: none;
+      width: fit-content;
+      margin-top: auto;
+      transition: all 0.2s ease;
+    }
+
+    .btn-video:hover {
+      background: var(--accent-gold);
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    .empty-category-msg {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 5% 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <div class="logo">PRO NETWORKS</div>
-        <nav>
-            <a href="#brands">Brands</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>PRO NETWORKS</h1>
-            <p>Crafting Unforgettable Experiences across Entertainment, Talent Booking, and Interactive Event Activities.</p>
-            <button class="btn btn-gold" onclick="openGallery('all')">Explore Modal Gallery</button>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#home" class="brand-logo">
+        <img src="pro-networks.jpg" alt="PRO NETWORKS Logo" onerror="this.src='pro-em.jpg'">
+        <div class="brand-logo-text">
+          PRO NETWORKS
+          <small>EVENTS • ENTERTAINMENT • EXPERIENCES</small>
         </div>
-    </section>
-
-    <!-- Brands Section -->
-    <section class="brands-section" id="brands">
-        <h2 class="section-title">Our Specialist Brands</h2>
-        <div class="brand-grid">
-            
-            <!-- PRO EM Card -->
-            <div class="brand-card">
-                <img src="YOUR_PRO_EM_IMAGE.jpg" alt="PRO EM Entertainment Management" onerror="this.src='https://via.placeholder.com/400x220/1a1a1e/d4af37?text=PRO+EM'">
-                <div class="brand-card-body">
-                    <div>
-                        <h3>PRO EM</h3>
-                        <p>Entertainment Management for Sangeet stage acts, Baraat processions, receptions, and hospitality acts.</p>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-gold" onclick="openGallery('pro-em')">View Gallery</button>
-                        <a href="https://wa.me/1234567890?text=Hi%20PRO%20NETWORKS,%20I%20am%20interested%20in%20PRO%20EM%20services." target="_blank" class="btn btn-whatsapp">WhatsApp PRO EM</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRO VISION Card -->
-            <div class="brand-card">
-                <img src="YOUR_PRO_VISION_IMAGE.jpg" alt="PRO VISION Talent Booking" onerror="this.src='https://via.placeholder.com/400x220/1a1a1e/d4af37?text=PRO+VISION'">
-                <div class="brand-card-body">
-                    <div>
-                        <h3>PRO VISION</h3>
-                        <p>Talent booking featuring Actors, Anchors, Comedians, Live Singers, Sufi ensembles, and stage talent.</p>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-gold" onclick="openGallery('pro-vision')">View Gallery</button>
-                        <a href="https://wa.me/1234567890?text=Hi%20PRO%20NETWORKS,%20I%20am%20interested%20in%20PRO%20VISION%20talent." target="_blank" class="btn btn-whatsapp">WhatsApp PRO VISION</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRO ACTIVE Card -->
-            <div class="brand-card">
-                <img src="YOUR_PRO_ACTIVE_IMAGE.jpg" alt="PRO ACTIVE Event Activities" onerror="this.src='https://via.placeholder.com/400x220/1a1a1e/d4af37?text=PRO+ACTIVE'">
-                <div class="brand-card-body">
-                    <div>
-                        <h3>PRO ACTIVE</h3>
-                        <p>Event activities including amusement rides, casino lounges, food/game stalls, and vintage wooden games.</p>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-gold" onclick="openGallery('pro-active')">View Gallery</button>
-                        <a href="https://wa.me/1234567890?text=Hi%20PRO%20NETWORKS,%20I%20am%20interested%20in%20PRO%20ACTIVE%20activities." target="_blank" class="btn btn-whatsapp">WhatsApp PRO ACTIVE</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Modal Gallery -->
-    <div class="modal" id="galleryModal" aria-hidden="true">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeGallery()">&times;</span>
-            <h2 class="section-title" style="margin-bottom: 1.5rem;">Interactive Gallery</h2>
-            
-            <div class="modal-filters">
-                <button class="filter-btn active" onclick="filterGallery('all', this)">All Brands</button>
-                <button class="filter-btn" onclick="filterGallery('pro-em', this)">PRO EM</button>
-                <button class="filter-btn" onclick="filterGallery('pro-vision', this)">PRO VISION</button>
-                <button class="filter-btn" onclick="filterGallery('pro-active', this)">PRO ACTIVE</button>
-            </div>
-
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Dynamic Content Loaded by JS -->
-            </div>
-        </div>
+      </a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/919821586547" class="btn-touch" target="_blank">Get in Touch</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2026 PRO NETWORKS. All rights reserved. | Contact: info@pronetworks.com</p>
-    </footer>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-img">
+        <img src="pro-networks.jpg" alt="PRO NETWORKS" onerror="this.src='pro-em.jpg'">
+      </div>
+      <div class="hero-content">
+        <div class="hero-subtitle">Welcome to PRO NETWORKS</div>
+        <h1>We Create <span>Unforgettable</span> Experiences.</h1>
+        <p>Entertainment, talent and complete event management — brought together through PRO EM, PRO VISION and PRO ACTIVE.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn-primary">Explore Services →</a>
+          <a href="https://wa.me/919821586547" class="btn-secondary" target="_blank">WhatsApp Us</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><b>3</b><span>Specialist Brands</span></div>
+          <div class="stat-item"><b>1</b><span>Connected Vision</span></div>
+          <div class="stat-item"><b>2009</b><span>Established</span></div>
+        </div>
+      </div>
+    </section>
 
-    <!-- JavaScript -->
-    <script>
-        const galleryData = [
-            { brand: 'pro-em', title: 'Sangeet Stage Production', desc: 'Custom stage setup & lighting', img: 'YOUR_PICTURE_1.jpg' },
-            { brand: 'pro-em', title: 'Grand Baraat Entry', desc: 'Procession & pyrotechnic display', img: 'YOUR_PICTURE_2.jpg' },
-            { brand: 'pro-vision', title: 'Live Sufi Ensembles', desc: 'Traditional & contemporary Sufi acts', img: 'YOUR_PICTURE_3.jpg' },
-            { brand: 'pro-vision', title: 'Celebrity Anchors', desc: 'Professional event hosts', img: 'YOUR_PICTURE_4.jpg' },
-            { brand: 'pro-active', title: 'Casino Lounge Experience', desc: 'Luxury poker & roulette tables', img: 'YOUR_PICTURE_5.jpg' },
-            { brand: 'pro-active', title: 'Vintage Wooden Games', desc: 'Handcrafted interactive game stalls', img: 'YOUR_PICTURE_6.jpg' }
-        ];
+    <!-- SERVICES -->
+    <section id="services" class="services-section">
+      <div class="section-title">
+        <span>Our Services</span>
+        <h2>Three Brands. One Vision.</h2>
+        <p>Choose the specialist team that fits your event, entertainment or talent requirement.</p>
+      </div>
 
-        const modal = document.getElementById('galleryModal');
-        const galleryGrid = document.getElementById('galleryGrid');
+      <div class="services-grid">
+        
+        <!-- PRO EM CARD -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="pro-em.jpg" alt="PRO EM">
+          </div>
+          <div class="service-card-body">
+            <div class="brand-tag">Entertainment Management</div>
+            <h3>PRO EM</h3>
+            <h4>Events • Celebrations • Corporate Functions</h4>
+            <p>Complete entertainment solutions designed for wedding celebrations, corporate galas, and special occasions.</p>
 
-        function openGallery(brandFilter = 'all') {
-            modal.style.display = 'block';
-            modal.setAttribute('aria-hidden', 'false');
+            <div class="event-buttons-container">
+              <div class="event-buttons-title">✨ Select Event Type</div>
+              <div class="event-type-buttons">
+                <button class="event-btn" onclick="openGallery('sangeet', 'em')">💃 Sangeet Stage Acts</button>
+                <button class="event-btn" onclick="openGallery('baraat', 'em')">🥁 Baraat</button>
+                <button class="event-btn" onclick="openGallery('reception', 'em')">🥂 Reception</button>
+                <button class="event-btn" onclick="openGallery('serve', 'em')">🍽️ Serve</button>
+              </div>
+            </div>
+
+            <a href="https://wa.me/919821586547" class="whatsapp-btn" target="_blank">WhatsApp PRO EM</a>
+          </div>
+        </div>
+
+        <!-- PRO VISION CARD -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="pro-vision.jpg" alt="PRO VISION">
+          </div>
+          <div class="service-card-body">
+            <div class="brand-tag">Talent & Entertainment</div>
+            <h3>PRO VISION</h3>
+            <h4>Celebrities • Bands • Unique Acts</h4>
+            <p>Celebrity appearances, live bands, performers and unique entertainment acts for memorable events.</p>
+
+            <div class="event-buttons-container">
+              <div class="event-buttons-title">🌟 Select Talent Category</div>
+              <div class="event-type-buttons">
+                <button class="event-btn" onclick="openGallery('actor', 'vision')">🎭 Actors</button>
+                <button class="event-btn" onclick="openGallery('anchor', 'vision')">🎤 Anchors</button>
+                <button class="event-btn" onclick="openGallery('comedian', 'vision')">😂 Comedians</button>
+                <button class="event-btn" onclick="openGallery('singer', 'vision')">🎵 Singers</button>
+                <button class="event-btn" onclick="openGallery('sufi', 'vision')">✨ Sufi Acts</button>
+                <button class="event-btn" onclick="openGallery('talent', 'vision')">🌟 Unique Talent</button>
+              </div>
+            </div>
+
+            <a href="https://wa.me/919619424331" class="whatsapp-btn" target="_blank">WhatsApp PRO VISION</a>
+          </div>
+        </div>
+
+        <!-- PRO ACTIVE CARD -->
+        <div class="service-card">
+          <div class="service-card-img">
+            <img src="pro-active.jpg" alt="PRO ACTIVE">
+          </div>
+          <div class="service-card-body">
+            <div class="brand-tag">Event Management</div>
+            <h3>PRO ACTIVE</h3>
+            <h4>Planning • Coordination • Execution</h4>
+            <p>Complete end-to-end event management, amusement rides, carnival setups, interactive game stalls, and decor.</p>
             
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            filterBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if ((brandFilter === 'all' && btn.innerText.includes('All')) ||
-                    (brandFilter === 'pro-em' && btn.innerText.includes('PRO EM')) ||
-                    (brandFilter === 'pro-vision' && btn.innerText.includes('PRO VISION')) ||
-                    (brandFilter === 'pro-active' && btn.innerText.includes('PRO ACTIVE'))) {
-                    btn.classList.add('active');
-                }
-            });
+            <div class="event-buttons-container">
+              <div class="event-buttons-title">🎯 Select Activity Category</div>
+              <div class="event-type-buttons">
+                <button class="event-btn" onclick="openGallery('amusement', 'active')">🎡 Amusement Rides</button>
+                <button class="event-btn" onclick="openGallery('casino', 'active')">🎰 Casino Lounge</button>
+                <button class="event-btn" onclick="openGallery('foodstall', 'active')">🍿 Food Stalls</button>
+                <button class="event-btn" onclick="openGallery('gamestall', 'active')">🎯 Game Stalls</button>
+                <button class="event-btn" onclick="openGallery('wooden', 'active')">🪵 Wooden Games</button>
+              </div>
+            </div>
 
-            renderGallery(brandFilter);
-        }
+            <a href="https://wa.me/917710996547" class="whatsapp-btn" target="_blank" style="margin-top:auto;">WhatsApp PRO ACTIVE</a>
+          </div>
+        </div>
 
-        function closeGallery() {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-        }
+      </div>
+    </section>
 
-        function filterGallery(brand, btnElement) {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-            renderGallery(brand);
-        }
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="section-title">
+        <span>About Us</span>
+        <h2>More Than Events.<br>We Create Experiences.</h2>
+        <p>PRO NETWORKS brings entertainment and event management together under one connected network.</p>
+      </div>
+    </section>
 
-        function renderGallery(filter) {
-            galleryGrid.innerHTML = '';
-            const filteredItems = filter === 'all' ? galleryData : galleryData.filter(item => item.brand === filter);
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="section-title">
+        <span>Contact Us</span>
+        <h2>Let's Work Together.</h2>
+        <p>Have an event in mind? Connect with the PRO NETWORKS team today.</p>
+      </div>
 
-            filteredItems.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'gallery-item';
-                card.innerHTML = `
-                    <img src="${item.img}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/1a1a1e/d4af37?text=${encodeURIComponent(item.title)}'">
-                    <div class="gallery-item-info">
-                        <h4>${item.title}</h4>
-                        <p>${item.desc}</p>
-                    </div>
-                `;
-                galleryGrid.appendChild(card);
-            });
-        }
+      <div class="contact-grid">
+        <a href="https://wa.me/919821586547" class="contact-card" target="_blank">
+          <div class="contact-icon">💬</div>
+          <div>
+            <small style="color:var(--accent-gold);">PRO EM</small>
+            <div style="font-weight:600;">+91 98215 86547</div>
+          </div>
+        </a>
+        <a href="https://wa.me/919619424331" class="contact-card" target="_blank">
+          <div class="contact-icon">💬</div>
+          <div>
+            <small style="color:var(--accent-gold);">PRO VISION</small>
+            <div style="font-weight:600;">+91 96194 24331</div>
+          </div>
+        </a>
+        <a href="https://wa.me/917710996547" class="contact-card" target="_blank">
+          <div class="contact-icon">💬</div>
+          <div>
+            <small style="color:var(--accent-gold);">PRO ACTIVE</small>
+            <div style="font-weight:600;">+91 77109 96547</div>
+          </div>
+        </a>
+        <a href="mailto:pro.em.khan@gmail.com" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <small style="color:var(--accent-gold);">Email Us</small>
+            <div style="font-weight:600;">pro.em.khan@gmail.com</div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
 
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                closeGallery();
-            }
-        };
-    </script>
+  <!-- GALLERY MODAL -->
+  <div id="galleryModal" class="modal-overlay">
+    <div class="modal-container">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      
+      <div class="modal-title-area">
+        <h2 id="modalCategoryTitle" style="color:var(--accent-gold); font-family:'Playfair Display', serif;">Category</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Browse through artists, performers and act details</p>
+      </div>
+
+      <div class="modal-tabs" id="modalTabs"></div>
+
+      <div id="actsGrid" class="acts-grid"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© PRO NETWORKS. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const categoryNames = {
+      sangeet: 'Sangeet Stage Acts',
+      baraat: 'Baraat',
+      reception: 'Reception',
+      serve: 'Serve Hostesses & Acts',
+      actor: 'Celebrity & Actors',
+      anchor: 'Anchors & Emcees',
+      comedian: 'Comedians & Stand-up',
+      singer: 'Playback & Live Singers',
+      sufi: 'Sufi & Classical Musicians',
+      talent: 'Unique & Special Talent',
+      amusement: 'Amusement & Carnival Rides',
+      casino: 'Casino & Vegas Games Lounge',
+      foodstall: 'Interactive Food Stalls',
+      gamestall: 'Interactive Game Stalls',
+      wooden: 'Wooden & Vintage Games'
+    };
+
+    const brandTabs = {
+      em: ['sangeet', 'baraat', 'reception', 'serve'],
+      vision: ['actor', 'anchor', 'comedian', 'singer', 'sufi', 'talent'],
+      active: ['amusement', 'casino', 'foodstall', 'gamestall', 'wooden']
+    };
+
+    const galleryData = {
+      // PRO EM
+      sangeet: [
+        { title: "International Belly Act", artists: "3 to 6 Artists", timing: "4 acts of 5 min each", desc: "Mesmerizing international stage acts with LED Wings, Fans, and Flamenco props.", image: "Sangeet international.jpg", instagram: "https://www.instagram.com/reel/DTCnFBLjHYr/" },
+        { title: "Ring Aerial Act", artists: "1 to 2 Artists", timing: "3 acts of 5 min each", desc: "Breathtaking aerial ring, duo rope, and hanging acrobatic performances.", image: "Sangeet-ring aerial.jpg", instagram: "https://www.instagram.com/reel/DTC1dehjME_/" },
+        { title: "Fire Act", artists: "2 to 4 Artists", timing: "4 acts of 5 min each", desc: "Thrilling stage fire performances utilizing unique fire props and choreography.", image: "Sangeet-fire.jpg", instagram: "https://www.instagram.com/reel/DTC1QpMjESW/" },
+        { title: "LED & UV Act", artists: "2 to 4 Artists", timing: "4 acts of 5 min each", desc: "High-tech LED and ultra-violet suit performances with glowing visual props.", image: "Sangeet-led.jpg", instagram: "https://www.instagram.com/reel/DTC14pKjCnL/" },
+        { title: "Tanoura Act", artists: "1 Artist", timing: "4 acts of 5 min each", desc: "Traditional and LED Sufi Tanoura spinning performance with custom light/fire props.", image: "Sangeet-tanoura.jpg", instagram: "https://www.instagram.com/reel/DTC02UGDMKa/" },
+        { title: "Martini Glass Act", artists: "1 to 2 Artists", timing: "4 acts of 5 min each", desc: "Glamorous contortion and dance act performed inside a giant illuminated Martini glass.", image: "Sangeet-Martini.jpg", instagram: "https://www.instagram.com/reel/CvotVXiptQi/" },
+        { title: "Liquid Drummer", artists: "1 to 3 Artists", timing: "2 acts of 45 min each", desc: "High-energy water drum percussion show with illuminated splashes and LED suits.", image: "Sangeet-liquid drummer.jpg", instagram: "https://www.instagram.com/reel/DTC2DPdjJVC/" },
+        { title: "Anti-Gravity Wall Musicians", artists: "2 to 9 Artists", timing: "2 acts of 45 min each", desc: "Unique musical setup with instrumentalists mounted on a vertical anti-gravity wall.", image: "Sangeet-Anti gravity.jpg", instagram: "https://www.instagram.com/reel/DTC2eH4DKbx/" },
+        { title: "Russian Stage Live Musicians", artists: "1 to 9 Artists", timing: "2 acts of 45 min each", desc: "Breathtaking mix of live instrumental music and stage ensemble.", image: "russian.jpg", instagram: "https://www.instagram.com/reel/DAk-rYBoAHX/" }
+      ],
+      baraat: [
+        { title: "Apsara Concept Baraat", artists: "4 to 8 Artists", timing: "Procession Entry", desc: "Ethereal celestial dancer troupe welcoming and leading the grand baraat procession.", image: "Baraat-apsara.jpg", instagram: "https://www.instagram.com/reel/CtI6XjqoR_R/" },
+        { title: "Arabian Theme Baraat", artists: "6 to 12 Artists", timing: "Procession Entry", desc: "Exotic Arabian-themed royal procession featuring traditional costumes and props.", image: "Baraat-arabian.jpg", instagram: "https://www.instagram.com/reel/DTNPor9DGnN/" },
+        { title: "Brass & Fusion Band", artists: "8 to 15 Musicians", timing: "60 to 90 min", desc: "Energetic live brass fusion band creating a grand, royal musical experience.", image: "Baraat-band.jpg", instagram: "https://www.instagram.com/p/CtOhgb2oCfM/" },
+        { title: "Ballerina Welcome Act", artists: "2 to 4 Artists", timing: "Procession Entry", desc: "Graceful ballerina dancers adding classic flair and grandeur to the wedding arrival.", image: "Baraat-bellerina.jpg", instagram: "https://www.instagram.com/reel/CtLhRKrIzyC/" },
+        { title: "Grand Carnival Baraat", artists: "8 to 15 Performers", timing: "Procession Entry", desc: "Vibrant carnival dancers, stilt walkers, and colorful parade performers.", image: "Baraat-carnival.jpg", instagram: "https://www.instagram.com/reel/Cvj5zuHo0Ox/" },
+        { title: "Colours of Joy Baraat", artists: "6 to 12 Performers", timing: "Procession Entry", desc: "Multi-colored visual dance troupe bringing high energy and festive color to the parade.", image: "Baraat-colours.jpg", instagram: "https://www.instagram.com/reel/DTNNn2hjPol/" },
+        { title: "Crazy Carnival Troupe", artists: "10 to 20 Performers", timing: "Procession Entry", desc: "Extravagant festive carnival troupe with elaborate costumes and crowd engagement.", image: "Baraat-crazycarnival.jpg", instagram: "https://www.instagram.com/reel/DBGOPLHoHEJ/" },
+        { title: "Punjabi Dhol Beats", artists: "4 to 10 Dholis", timing: "60 to 90 min", desc: "High-power Punjabi Dhol beats driving maximum dance energy for the baraati troupe.", image: "Baraat-dhol.jpg", instagram: "https://www.instagram.com/reel/DTkY5hhjFdH/" },
+        { title: "Egyptian Royal Baraat", artists: "6 to 12 Performers", timing: "Procession Entry", desc: "Majestic Egyptian Pharaoh and guard troupe bringing ancient luxury and style.", image: "Baraat-egyptian.jpg", instagram: "https://www.instagram.com/reel/DTkZo-nDLKb/" },
+        { title: "Royal Indian Folk Baraat", artists: "8 to 16 Artists", timing: "Procession Entry", desc: "Traditional Indian folk dancers and cultural performers celebrating heritage.", image: "Baraat-indian.jpg", instagram: "https://www.instagram.com/reel/DTSOBX5jLm1/" },
+        { title: "Japanese Fan & Drum Baraat", artists: "4 to 8 Performers", timing: "Procession Entry", desc: "Unique Japanese-themed procession featuring traditional fans, robes, and percussion.", image: "Baraat-japanese.jpg", instagram: "https://www.instagram.com/reel/DTNOgsDDMAQ/" },
+        { title: "Processional Live Musicians", artists: "3 to 6 Musicians", timing: "60 to 90 min", desc: "Mobile instrumentalists performing live acoustic and fusion melodies along the route.", image: "Baraat-musician.jpg", instagram: "https://www.instagram.com/reel/DTkZEaDDJto/" }
+      ],
+      reception: [
+        { title: "Grand Reception Act 1", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-1.jpg" },
+        { title: "Grand Reception Act 2", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-2.jpg" },
+        { title: "Grand Reception Act 3", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-3.jpg" },
+        { title: "Grand Reception Act 4", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-4.jpg" },
+        { title: "Grand Reception Act 5", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-5.jpg" },
+        { title: "Grand Reception Act 6", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-6.jpg" },
+        { title: "Grand Reception Act 7", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-7.jpg" },
+        { title: "Grand Reception Act 8", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-8.jpg" },
+        { title: "Grand Reception Act 9", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-9.jpg" },
+        { title: "Grand Reception Act 10", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-10.jpg" },
+        { title: "Grand Reception Act 11", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-11.jpg" },
+        { title: "Grand Reception Act 12", artists: "2 to 6 Artists", timing: "30 to 45 min", desc: "Elegant stage and entry performance tailored for luxury wedding receptions.", image: "Reception-12.jpg" }
+      ],
+      serve: [
+        { title: "Arabic Hospitality Act", artists: "2 to 6 Hostesses", timing: "Welcome & Dinner Service", desc: "Traditional Arabic attire hostesses offering welcoming refreshments and warm hospitality.", image: "Serve-arabic.jpg", instagram: "https://www.instagram.com/reel/CtOoctZoG_M/" },
+        { title: "Bala Welcome & Serving Act", artists: "2 to 4 Artists", timing: "Welcome & Cocktail Hours", desc: "Elegant Russian/Bala themed hospitality team assisting guests with drinks and snacks.", image: "Serve-bala.jpg", instagram: "https://www.instagram.com/p/CtOoUxJIyY0/" },
+        { title: "Stroller Tray Serving", artists: "2 to 6 Performers", timing: "Cocktail & High Tea", desc: "Mobile strolling tray servers presenting mocktails, hors d'oeuvres, and sweets directly to guests.", image: "Serve-stroller.jpg", instagram: "https://www.instagram.com/p/CtOnuzioWwr/" },
+        { title: "Living Dancing Table", artists: "1 to 4 Performers", timing: "Welcome & Cocktail Area", desc: "Stunning interactive living table hostesses wearing custom tables to serve drinks and appetizers.", image: "Serve-dancingtable.jpg", instagram: "https://www.instagram.com/reel/DUKw7s1jCI_/" },
+        { title: "Cigar Lounge & Hostesses", artists: "1 to 3 Artists", timing: "After Party & Lounge", desc: "Exclusive cigar hostess concept and live rolling setup for VIP lounge experiences.", image: "Serve-cigar.jpg", instagram: "https://www.instagram.com/reel/DUKwXmxDAfz/" },
+        { title: "Royal Butler Service", artists: "2 to 8 Butlers", timing: "Full Event Service", desc: "Immaculately dressed professional male/female butlers providing white-glove hospitality service.", image: "Serve-buttler.jpg", instagram: "https://www.instagram.com/reel/DUahXOVjAxW/" },
+        { title: "Casino Theme Hostesses", artists: "2 to 6 Performers", timing: "Cocktail & After Party", desc: "Vegas-style themed hostesses ushering guests, handing out casino chips, drinks, and favors.", image: "Serve-casino.jpg", instagram: "https://www.instagram.com/reel/CtOowjAo65p/" },
+        { title: "LED Tron Serving Act", artists: "2 to 4 Artists", timing: "Night Events & After Party", desc: "Futuristic illuminated LED costume servers dispensing shots, drinks, and glow accessories.", image: "Serve-led.jpg", instagram: "https://www.instagram.com/reel/DUIEX1TDFQN/" },
+        { title: "Living Lamp Hostesses", artists: "2 to 4 Performers", timing: "Welcome Entry & Lounge", desc: "Ethereal hostesses styled with illuminated headpiece lamps serving guests with elegance.", image: "Serve-lamp.jpg", instagram: "https://www.instagram.com/reel/CyStF47o4RM/" },
+        { title: "Roller Skate Servers", artists: "2 to 6 Performers", timing: "Cocktail & Party", desc: "High-energy retro roller-skating hostesses serving drinks and snacks with flair.", image: "Serve-skate.jpg", instagram: "https://www.instagram.com/reel/DVA80D6DCPa/" }
+      ],
+
+      // PRO VISION
+      actor: [
+        { title: "Celebrity Actor Presence 1", artists: "Celebrity / Actor", timing: "Appearance / Performance", desc: "Exclusive celebrity guest appearances, ribbon cutting, or live performance for high-profile events.", image: "Provision-actor1.jpg" },
+        { title: "Bollywood Actor Presence 2", artists: "Celebrity / Actor", timing: "Appearance / Interaction", desc: "Renowned film actor available for stage guesting, fan interactions, and event launches.", image: "Provision-actor2.jpg" },
+        { title: "Star Celebrity Act 3", artists: "Celebrity / Actor", timing: "Live Guest Appearance", desc: "Star-studded presence to elevate wedding receptions, brand launches, and corporate galas.", image: "Provision-actor3.jpg" },
+        { title: "Film & TV Actor 4", artists: "Actor / Artist", timing: "Stage / Meet & Greet", desc: "Popular screen actor bringing stardom and excitement to special events.", image: "Provision-actor4.jpg" },
+        { title: "Celebrity Guest Artist 5", artists: "Celebrity / Actor", timing: "Event Presence", desc: "Top-tier television and film personality for grand wedding entries and inaugurations.", image: "Provision-actor5.jpg" },
+        { title: "Bollywood Talent 6", artists: "Bollywood Actor", timing: "Special Guest Appearance", desc: "Celebrity actor for brand endorsements, VIP meet & greets, and stage appearances.", image: "Provision-actor6.jpg" },
+        { title: "Screen Celebrity 7", artists: "Actor / Star", timing: "Event Appearance", desc: "Featured film personality adding glamour and high visibility to your celebration.", image: "Provision-actor7.jpg" },
+        { title: "Renowned Actor 8", artists: "Celebrity Artist", timing: "Stage Performance", desc: "Professional film & drama actor for corporate shows and high-end celebrations.", image: "Provision-actor8.jpg" },
+        { title: "Featured Celebrity 9", artists: "Bollywood Personality", timing: "Chief Guest / Appearance", desc: "High-profile celebrity presence tailored for product launches and luxury galas.", image: "Provision-actor9.jpg" },
+        { title: "Bollywood Personality 10", artists: "Actor / Star", timing: "VIP Guest", desc: "Popular actor bringing red carpet excitement and media presence to your venue.", image: "Provision-actor10.jpg" },
+        { title: "Lead Film Actor 11", artists: "Celebrity Artist", timing: "Live Appearance", desc: "Leading screen star available for grand inaugurations, stage intros, and awards.", image: "Provision-actor11.jpg" },
+        { title: "Celebrity Stage Star 12", artists: "Actor / Performer", timing: "Live Stage Show", desc: "Charismatic actor delivering dynamic stage appearances and guest engagement.", image: "Provision-actor12.jpg" },
+        { title: "Featured Star Talent 13", artists: "Celebrity Actor", timing: "VIP Event Presence", desc: "Renowned film and TV talent for exclusive luxury gatherings and corporate galas.", image: "Provision-actor13.jpg" },
+        { title: "Iconic Screen Actor 14", artists: "Star Personality", timing: "Special Guest", desc: "Iconic celebrity presence creating unforgettable memories for your guests.", image: "Provision-actor14.jpg" },
+        { title: "Celebrity Brand Ambassador 15", artists: "Lead Actor", timing: "Full Event Guest", desc: "High-profile actor for brand endorsement events, galas, and grand celebrations.", image: "Provision-actor15.jpg" }
+      ],
+      anchor: [
+        { title: "Celebrity Emcee & Anchor", artists: "1 Anchor", timing: "Full Event Hosting", desc: "Charismatic, professional anchor keeping audiences engaged with seamless show flow.", image: "Provision-anchor1.jpg" },
+        { title: "Grand Event Anchor", artists: "1 Anchor", timing: "Full Event Hosting", desc: "Dynamic live emcee experienced in corporate galas, high-end weddings, and award shows.", image: "Provision-anchor2.jpg" }
+      ],
+      comedian: [
+        { title: "Stand-Up Comedy Special 1", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Top-tier stand-up comic delivering family-friendly or corporate customized laughter.", image: "Provision-comedian1.jpg" },
+        { title: "Stand-Up Comedy Special 2", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "High-energy comedic act tailored for corporate galas and private celebrations.", image: "Provision-comedian2.jpg" },
+        { title: "Stand-Up Comedy Special 3", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Renowned comic bringing sidesplitting humor and crowd interaction.", image: "Provision-comedian3.jpg" },
+        { title: "Stand-Up Comedy Special 4", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Hilarious live comedy performance designed for diverse event audiences.", image: "Provision-comedian4.jpg" },
+        { title: "Stand-Up Comedy Special 5", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Popular stand-up artist delivering relatable, engaging humor.", image: "Provision-comedian5.jpg" },
+        { title: "Stand-Up Comedy Special 6", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Laugh-out-loud comedy show featuring hilarious observation and audience banter.", image: "Provision-comedian6.jpg" },
+        { title: "Stand-Up Comedy Special 7", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Top television & digital comedy artist performing live on stage.", image: "Provision-comedian7.jpg" },
+        { title: "Stand-Up Comedy Special 8", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Smart, engaging stand-up routine ideal for corporate events and award nights.", image: "Provision-comedian8.jpg" },
+        { title: "Stand-Up Comedy Special 9", artists: "Celebrity Comedian", timing: "30 to 60 min", desc: "Unforgettable comedic act adding spark and laughter to any event night.", image: "Provision-comedian9.jpg" }
+      ],
+      singer: [
+        { title: "Live Playback Singer 1", artists: "Singer + Band", timing: "60 to 90 min", desc: "Soulful live vocal artist performing hit Bollywood melodies and popular tracks.", image: "Provision-singer1.jpg" },
+        { title: "Live Playback Singer 2", artists: "Singer + Band", timing: "60 to 90 min", desc: "Versatile lead singer driving electrifying live musical energy on stage.", image: "Provision-singer2.jpg" },
+        { title: "Live Playback Singer 3", artists: "Singer + Band", timing: "60 to 90 min", desc: "Mesmerizing vocal performance featuring classic hits and modern chartbusters.", image: "Provision-singer3.jpg" },
+        { title: "Live Playback Singer 4", artists: "Singer + Band", timing: "60 to 90 min", desc: "High-voltage live music performance for sangeets, concerts, and receptions.", image: "Provision-singer4.jpg" },
+        { title: "Live Playback Singer 5", artists: "Singer + Band", timing: "60 to 90 min", desc: "Sensational live artist captivating audiences with power-packed vocals.", image: "Provision-singer5.jpg" },
+        { title: "Live Playback Singer 6", artists: "Singer + Band", timing: "60 to 90 min", desc: "Celebrity playback vocalist performing popular numbers for large audiences.", image: "Provision-singer6.jpg" },
+        { title: "Live Playback Singer 7", artists: "Singer + Band", timing: "60 to 90 min", desc: "Expressive vocalist bringing emotional depth and party energy to the stage.", image: "Provision-singer7.jpg" },
+        { title: "Live Playback Singer 8", artists: "Singer + Band", timing: "60 to 90 min", desc: "Dynamic live act performing timeless hits and contemporary fusion tracks.", image: "Provision-singer8.jpg" },
+        { title: "Live Playback Singer 9", artists: "Singer + Band", timing: "60 to 90 min", desc: "Top recording artist bringing concert-scale music to your event.", image: "Provision-singer9.jpg" },
+        { title: "Live Playback Singer 10", artists: "Singer + Band", timing: "60 to 90 min", desc: "Unforgettable live singing act crafted for weddings and corporate galas.", image: "Provision-singer10.jpg" },
+        { title: "Live Playback Singer 11", artists: "Singer + Band", timing: "60 to 90 min", desc: "Versatile artist seamlessly transitioning from unplugged acoustic to dance hits.", image: "Provision-singer11.jpg" },
+        { title: "Live Playback Singer 12", artists: "Singer + Band", timing: "60 to 90 min", desc: "Renowned vocalist delivering high-energy stage presence and musical brilliance.", image: "Provision-singer12.jpg" },
+        { title: "Live Playback Singer 13", artists: "Singer + Band", timing: "60 to 90 min", desc: "Grand live musical concert experience with full backing band and production.", image: "Provision-singer13.jpg" }
+      ],
+      sufi: [
+        { title: "Sufi & Qawwali Ensemble 1", artists: "4 to 8 Musicians", timing: "60 to 90 min", desc: "Soulful Sufi music experience creating a mystical, serene atmosphere.", image: "Provision-sufi1.jpg" },
+        { title: "Sufi & Qawwali Ensemble 2", artists: "4 to 8 Musicians", timing: "60 to 90 min", desc: "Traditional and fusion Sufi renditions perfect for mehendi and cocktail evenings.", image: "Provision-sufi2.jpg" },
+        { title: "Sufi & Qawwali Ensemble 3", artists: "4 to 8 Musicians", timing: "60 to 90 min", desc: "Mesmerizing Sufi vocals accompanied by live harmonium, tabla, and acoustic instruments.", image: "Provision-sufi3.jpg" },
+        { title: "Sufi & Qawwali Ensemble 4", artists: "4 to 8 Musicians", timing: "60 to 90 min", desc: "Royal Sufi musical troupe delivering timeless spiritual and acoustic melodies.", image: "Provision-sufi4.jpg" }
+      ],
+      talent: [
+        { title: "Unique Stage Talent 1", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Exclusive specialty act bringing novelty and awe to stage events.", image: "Provision-talent1.jpg" },
+        { title: "Unique Stage Talent 2", artists: "Specialist Performer", timing: "30 to 45 min", desc: "High-impact visual performance creating memorable spectator moments.", image: "Provision-talent2.jpg" },
+        { title: "Unique Stage Talent 3", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Innovative artist showcase tailored for grand stage presentations.", image: "Provision-talent3.jpg" },
+        { title: "Unique Stage Talent 4", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Specialty entertainer blending technique, creativity, and flair.", image: "Provision-talent4.jpg" },
+        { title: "Unique Stage Talent 5", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Interactive performer creating engaging experiences for all age groups.", image: "Provision-talent5.jpg" },
+        { title: "Unique Stage Talent 6", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Customized act designed specifically to align with unique event themes.", image: "Provision-talent6.jpg" },
+        { title: "Unique Stage Talent 7", artists: "Specialist Performer", timing: "30 to 45 min", desc: "High-skill artistic act guaranteed to captivate and amaze guests.", image: "Provision-talent7.jpg" },
+        { title: "Unique Stage Talent 8", artists: "Specialist Performer", timing: "30 to 45 min", desc: "Bespoke stage showcase delivering world-class specialty entertainment.", image: "Provision-talent8.jpg" }
+      ],
+
+      // PRO ACTIVE
+      amusement: [
+        { title: "Amusement Ride Setup 1", artists: "Ride & Operators", timing: "Event Duration", desc: "Exciting carnival amusement ride setup for high-engagement outdoor and grand events.", image: "Proactive-amusement1.jpg" },
+        { title: "Amusement Ride Setup 2", artists: "Ride & Operators", timing: "Event Duration", desc: "Safe, high-fun amusement setup perfect for family carnivals and large parties.", image: "Proactive-amusement2.jpg" },
+        { title: "Amusement Ride Setup 3", artists: "Ride & Operators", timing: "Event Duration", desc: "Vibrant carnival installation creating a festive fairground atmosphere.", image: "Proactive-amusement3.jpg" },
+        { title: "Amusement Ride Setup 4", artists: "Ride & Operators", timing: "Event Duration", desc: "Interactive mechanical attraction for guests of all ages.", image: "Proactive-amusement4.jpg" },
+        { title: "Amusement Ride Setup 5", artists: "Ride & Operators", timing: "Event Duration", desc: "Popular party ride attraction providing non-stop entertainment.", image: "Proactive-amusement5.jpg" },
+        { title: "Amusement Ride Setup 6", artists: "Ride & Operators", timing: "Event Duration", desc: "Custom amusement setup tailored for large venue grounds and festivals.", image: "Proactive-amusement6.jpg" },
+        { title: "Amusement Ride Setup 7", artists: "Ride & Operators", timing: "Event Duration", desc: "Thrilling event ride complete with safety measures and managed operations.", image: "Proactive-amusement7.jpg" },
+        { title: "Amusement Ride Setup 8", artists: "Ride & Operators", timing: "Event Duration", desc: "Classic carnival attraction ideal for kid zones and family days.", image: "Proactive-amusement8.jpg" },
+        { title: "Amusement Ride Setup 9", artists: "Ride & Operators", timing: "Event Duration", desc: "Eye-catching decorative amusement setup to elevate event scale.", image: "Proactive-amusement9.jpg" },
+        { title: "Amusement Ride Setup 10", artists: "Ride & Operators", timing: "Event Duration", desc: "Grand carnival ride setup delivering memorable experiences for guests.", image: "Proactive-amusement10.jpg" },
+        { title: "Amusement Ride Setup 11", artists: "Ride & Operators", timing: "Event Duration", desc: "Ultimate event amusement attraction tailored for grand celebratory functions.", image: "Proactive-amusement11.jpg" }
+      ],
+      casino: [
+        { title: "Vegas Casino Station 1", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Authentic casino gaming table experience with professional dealers and customized chips.", image: "Proactive-casinol1.jpg" },
+        { title: "Vegas Casino Station 2", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "High-end poker & roulette lounge setup for corporate gala nights and private parties.", image: "Proactive-casinol2.jpg" },
+        { title: "Vegas Casino Station 3", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Interactive gaming tables bringing casino-style glamour and fun.", image: "Proactive-casinol3.jpg" },
+        { title: "Vegas Casino Station 4", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Luxury black-jack setup managed by trained casino dealers.", image: "Proactive-casinol4.jpg" },
+        { title: "Vegas Casino Station 5", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Complete casino zone branding and tables for high-profile lounge events.", image: "Proactive-casinol5.jpg" },
+        { title: "Vegas Casino Station 6", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Engaging cocktail-hour casino game table for guests.", image: "Proactive-casinol6.jpg" },
+        { title: "Vegas Casino Station 7", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Exclusive casino table hire complete with decorative accessories.", image: "Proactive-casinol7.jpg" },
+        { title: "Vegas Casino Station 8", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Royal casino floor concept with multiple game options.", image: "Proactive-casinol8.jpg" },
+        { title: "Vegas Casino Station 9", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Thrilling casino lounge experience with fun currency and prizes.", image: "Proactive-casinol9.jpg" },
+        { title: "Vegas Casino Station 10", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Custom themed casino lounge designed for after-parties.", image: "Proactive-casinol10.jpg" },
+        { title: "Vegas Casino Station 11", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Grand casino experience with professional croupiers and lighting.", image: "Proactive-casinol11.jpg" },
+        { title: "Vegas Casino Station 12", artists: "Dealer + Table Setup", timing: "3 to 4 Hours", desc: "Premium casino game zone setup for luxury corporate galas.", image: "Proactive-casinol12.jpg" }
+      ],
+      foodstall: [
+        { title: "Interactive Food Stall 1", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Customized live interactive food live counter with decorative branding.", image: "Proactive-foodstall1.jpg" },
+        { title: "Interactive Food Stall 2", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Carnival style popcorn, candy floss, or special street food setup.", image: "Proactive-foodstall2.jpg" },
+        { title: "Interactive Food Stall 3", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Decorative live snack stall tailored for sangeet and high-tea counters.", image: "Proactive-foodstall3.jpg" },
+        { title: "Interactive Food Stall 4", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Specialty dessert and beverage live counter station.", image: "Proactive-foodstall4.jpg" },
+        { title: "Interactive Food Stall 5", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Theme-based live food kiosk bringing street culinary charm.", image: "Proactive-foodstall5.jpg" },
+        { title: "Interactive Food Stall 6", artists: "Live Chefs / Crew", timing: "Event Duration", desc: "Deluxe interactive food counter for cocktail and carnival zones.", image: "Proactive-foodstall6.jpg" }
+      ],
+      gamestall: [
+        { title: "Carnival Game Stall 1", artists: "Attendant + Props", timing: "Event Duration", desc: "Fun interactive carnival skill game stall with custom prize distribution.", image: "Proactive-gamestall1.jpg" },
+        { title: "Carnival Game Stall 2", artists: "Attendant + Props", timing: "Event Duration", desc: "Classic ring toss, balloon shooting, or target carnival games.", image: "Proactive-gamestall2.jpg" },
+        { title: "Carnival Game Stall 3", artists: "Attendant + Props", timing: "Event Duration", desc: "Family game booth designed for max guest participation.", image: "Proactive-gamestall3.jpg" },
+        { title: "Carnival Game Stall 4", artists: "Attendant + Props", timing: "Event Duration", desc: "Interactive game booth for corporate family days and kid zones.", image: "Proactive-gamestall4.jpg" },
+        { title: "Carnival Game Stall 5", artists: "Attendant + Props", timing: "Event Duration", desc: "Skill game challenge stall with customized event props.", image: "Proactive-gamestall5.jpg" },
+        { title: "Carnival Game Stall 6", artists: "Attendant + Props", timing: "Event Duration", desc: "Vibrant traditional fairground game booth with managed staff.", image: "Proactive-gamestall6.jpg" },
+        { title: "Carnival Game Stall 7", artists: "Attendant + Props", timing: "Event Duration", desc: "Popular carnival activity counter for guests of all age groups.", image: "Proactive-gamestall7.jpg" },
+        { title: "Carnival Game Stall 8", artists: "Attendant + Props", timing: "Event Duration", desc: "Customized party activity game stall with decorative backdrop.", image: "Proactive-gamestall8.jpg" },
+        { title: "Carnival Game Stall 9", artists: "Attendant + Props", timing: "Event Duration", desc: "High-engagement competition stall for party guests.", image: "Proactive-gamestall9.jpg" },
+        { title: "Carnival Game Stall 10", artists: "Attendant + Props", timing: "Event Duration", desc: "Grand carnival game zone installation for wedding pre-functions.", image: "Proactive-gamestall10.jpg" }
+      ],
+      wooden: [
+        { title: "Vintage Wooden Game 1", artists: "Game Setup", timing: "Event Duration", desc: "Rustic handcrafted giant wooden game setup for luxury outdoor lawn events.", image: "Proactive-wooden1.jpg" },
+        { title: "Vintage Wooden Game 2", artists: "Game Setup", timing: "Event Duration", desc: "Classic wooden lawn games adding vintage aesthetic charm and fun.", image: "Proactive-wooden2.jpg" },
+        { title: "Vintage Wooden Game 3", artists: "Game Setup", timing: "Event Duration", desc: "Handcrafted giant Jenga, Connect Four, or bowling wooden games.", image: "Proactive-wooden3.jpg" },
+        { title: "Vintage Wooden Game 4", artists: "Game Setup", timing: "Event Duration", desc: "Lawn activity game station made of premium polished wood.", image: "Proactive-wooden4.jpg" },
+        { title: "Vintage Wooden Game 5", artists: "Game Setup", timing: "Event Duration", desc: "Interactive wooden board game station for cocktail lounge areas.", image: "Proactive-wooden5.jpg" },
+        { title: "Vintage Wooden Game 6", artists: "Game Setup", timing: "Event Duration", desc: "Traditional aesthetic game stall for rustic and royal wedding functions.", image: "Proactive-wooden6.jpg" },
+        { title: "Vintage Wooden Game 7", artists: "Game Setup", timing: "Event Duration", desc: "Giant wooden puzzle and strategy game booth for guests.", image: "Proactive-wooden7.jpg" },
+        { title: "Vintage Wooden Game 8", artists: "Game Setup", timing: "Event Duration", desc: "Elegant wooden activity setup enhancing outdoor event decor.", image: "Proactive-wooden8.jpg" },
+        { title: "Vintage Wooden Game 9", artists: "Game Setup", timing: "Event Duration", desc: "High-quality wooden game station suitable for all age groups.", image: "Proactive-wooden9.jpg" },
+        { title: "Vintage Wooden Game 10", artists: "Game Setup", timing: "Event Duration", desc: "Complete vintage wooden game lounge setup for luxury celebrations.", image: "Proactive-wooden10.jpg" }
+      ]
+    };
+
+    let currentBrand = 'em';
+
+    function openGallery(category, brand = 'em') {
+      currentBrand = brand;
+      document.getElementById('galleryModal').style.display = 'block';
+      renderTabs();
+      switchCategory(category);
+    }
+
+    function renderTabs() {
+      const tabsContainer = document.getElementById('modalTabs');
+      tabsContainer.innerHTML = '';
+
+      const categories = brandTabs[currentBrand] || brandTabs['em'];
+
+      categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'tab-btn';
+        btn.id = `tab-${cat}`;
+        btn.innerText = categoryNames[cat] || cat;
+        btn.onclick = () => switchCategory(cat);
+        tabsContainer.appendChild(btn);
+      });
+    }
+
+    function closeModal() {
+      document.getElementById('galleryModal').style.display = 'none';
+    }
+
+    function handleImgError(img) {
+      img.onerror = null;
+      img.src = 'pro-em.jpg';
+    }
+
+    function switchCategory(category) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeTab = document.getElementById(`tab-${category}`);
+      if (activeTab) activeTab.classList.add('active');
+
+      const titleText = categoryNames[category] ? categoryNames[category].toUpperCase() : category.toUpperCase();
+      document.getElementById('modalCategoryTitle').innerText = titleText;
+
+      const grid = document.getElementById('actsGrid');
+      grid.innerHTML = '';
+
+      const acts = galleryData[category] || [];
+
+      if (acts.length === 0) {
+        grid.innerHTML = `<div class="empty-category-msg">
+          <p style="font-size: 1.1rem; color: var(--accent-gold);">✨ Details Coming Soon</p>
+          <p>The acts and details for this category will be updated shortly.</p>
+        </div>`;
+        return;
+      }
+
+      acts.forEach(act => {
+        const card = document.createElement('div');
+        card.className = 'act-card';
+
+        const videoBtnHtml = act.instagram ? `
+          <a href="${act.instagram}" target="_blank" rel="noopener noreferrer" class="btn-video">
+            ▶ Watch Reel
+          </a>
+        ` : '';
+
+        card.innerHTML = `
+          <div class="act-card-img-wrapper">
+            <img src="${encodeURI(act.image)}" alt="${act.title}" class="act-card-image" onerror="handleImgError(this)">
+          </div>
+          <div class="act-card-content">
+            <div class="act-title">${act.title}</div>
+            <div class="act-badges">
+              <span class="badge">👥 ${act.artists}</span>
+              <span class="badge">⏱️ ${act.timing}</span>
+            </div>
+            <div class="act-desc">${act.desc}</div>
+            ${videoBtnHtml}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('galleryModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>
